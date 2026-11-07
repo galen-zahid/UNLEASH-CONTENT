@@ -3,3 +3,4 @@ remotion/node_modules/
 remotion/public/master/
 *.wav
 .DS_Store
+remotion/public/audio_v03/

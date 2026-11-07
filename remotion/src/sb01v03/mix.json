@@ -1,0 +1,16 @@
+{
+  "_doc": "Mix levels (linear gain) shared by the Remotion <Audio> tracks and tools/export_stems_v03.py. Ducking windows = cues.speech.",
+  "vo": 1.0,
+  "music": {"base": 0.42, "duck": 0.16, "attackFrames": 4, "releaseFrames": 8, "fadeInFrames": 12},
+  "sfx": {
+    "aperture": 0.55,
+    "text_reveal_01": 0.55,
+    "text_reveal_02": 0.6,
+    "circle_wipe": 0.6,
+    "coins": 0.55,
+    "gears_start_stop": 0.6,
+    "zero_hit": 0.7,
+    "footage_reentry": 0.55,
+    "bomb_in": 0.7
+  }
+}

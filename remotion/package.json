@@ -6,10 +6,17 @@
     "studio": "remotion studio src/index.ts",
     "typecheck": "tsc --noEmit",
     "render:sb01:preview": "remotion render src/index.ts SB01 ../renders/UNLEASH_SB01_v02_PREVIEW.mp4 --scale=0.5 --crf=20 --pixel-format=yuv420p",
-    "render:sb01:final": "remotion render src/index.ts SB01 ../renders/UNLEASH_SB01_v02_FINAL.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac"
+    "render:sb01:final": "remotion render src/index.ts SB01 ../renders/UNLEASH_SB01_v02_FINAL.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac",
+    "audio:v03": "cd .. && python -I tools/make_audio_v03.py _src_untracked/IMG_6757.MOV remotion/public/audio_v03",
+    "render:v03:A": "remotion render src/index.ts SB01-v03 ../renders/v03/A_0-3p9.mp4 --frames=0-116 --scale=0.5 --crf=18",
+    "render:v03:B": "remotion render src/index.ts SB01-v03 ../renders/v03/B_3p9-6p6.mp4 --frames=117-197 --scale=0.5 --crf=18",
+    "render:v03:C": "remotion render src/index.ts SB01-v03 ../renders/v03/C_6p6-10.mp4 --frames=198-299 --scale=0.5 --crf=18",
+    "render:v03:full": "remotion render src/index.ts SB01-v03 ../renders/v03/SB01_v03_remotion_raw.mp4 --image-format=png --crf=10 --audio-codec=pcm-16 --codec=h264"
   },
   "dependencies": {
     "@remotion/cli": "4.0.541",
+    "@remotion/media": "4.0.541",
+    "@remotion/motion-blur": "4.0.541",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "remotion": "4.0.541"
