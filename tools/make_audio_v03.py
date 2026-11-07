@@ -175,8 +175,8 @@ phase = np.cumsum(speed * 22 / SR)  # up to 22 teeth/s
 clicks = np.where(np.diff(np.floor(phase), prepend=0) > 0)[0]
 for k in clicks:
     c = bandnoise(int(0.012 * SR), 1500, 6000, rng) * np.exp(-t(0.012) * 300)
-    gear[k:k + len(c)] += c[:max(0, min(len(c), n - k))] * 0.5
-motor = np.sin(2 * np.pi * np.cumsum(55 + 45 * speed) / SR) * speed * 0.18
+    gear[k:k + len(c)] += c[:max(0, min(len(c), n - k))] * 1.2  # clicks carry the audible motion (pass 4)
+motor = np.sin(2 * np.pi * np.cumsum(55 + 45 * speed) / SR) * speed * 0.08
 gear += motor
 k = int(ts * SR); cl = np.sin(2 * np.pi * 120 * t(0.15)) * np.exp(-t(0.15) * 30) * 0.6 + bandnoise(int(0.15 * SR), 300, 2500, rng) * np.exp(-t(0.15) * 45) * 0.4
 gear[k:k + len(cl)] += cl[:n - k]

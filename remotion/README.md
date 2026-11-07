@@ -25,4 +25,5 @@ Elsewhere leave it unset.
 - `src/lib/tokens.ts` — GSM colours/fonts (see `../audit/GSM_TOKENS.md`)
 - `src/sb01/timeline.ts` — every keyframe, in output frames, annotated with the reference frame it rebuilds
 - `src/sb01/SB01.tsx` — layers (footage, window/grid, texts, graphics, talent card)
+- `src/sb01v03/` — **SB01 v03** (composition `SB01-v03`): `cues.json` (all frames), `mix.json` (levels), `SB01v03.tsx`, `Type.tsx`, `Illustration.tsx`, `AudioMix.tsx`. Pipeline: see `../qa/QA_REPORT_v03.md` → Reproduksi
 - `public/fonts/` — Source Serif 4 Bold/SemiBold Italic, Instrument Sans 400–700 (OFL, Google Fonts)

@@ -5,18 +5,30 @@ sfx_aperture                     -34.4     -20.0   (active  0.70s)
 sfx_text_reveal_01               -40.5     -25.5   (active  0.32s)
 sfx_text_reveal_02               -40.2     -22.9   (active  0.42s)
 sfx_circle_wipe                  -38.2     -22.1   (active  0.55s)
-sfx_coins                        -46.7     -30.0   (active  1.05s)
-sfx_gears_start_stop             -46.7     -28.2   (active  0.75s)
+sfx_coins                        -42.1     -25.4   (active  1.05s)
+sfx_gears_start_stop             -47.6     -24.4   (active  0.75s)
 sfx_zero_hit                     -36.5     -23.4   (active  0.60s)
 sfx_footage_reentry              -41.9     -24.5   (active  0.50s)
-sfx_bomb_in                      -36.1     -25.5   (active  0.43s)
+sfx_bomb_in                      -35.9     -25.5   (active  0.40s)
 Remotion mix vs sum-of-stems: r = 1.0000, lag = 0 samples, level diff = -0.01 dB
 speech f22-97: VO  -32.4 dBFS | music+SFX  -42.5 dBFS | VO margin +10.1 dB
-speech f116-188: VO  -33.7 dBFS | music+SFX  -39.7 dBFS | VO margin  +6.0 dB
+speech f116-188: VO  -33.7 dBFS | music+SFX  -39.1 dBFS | VO margin  +5.4 dB
 speech f188-285: VO  -32.3 dBFS | music+SFX  -43.6 dBFS | VO margin +11.2 dB
-speech f294-300: VO  -33.9 dBFS | music+SFX  -35.6 dBFS | VO margin  +1.7 dB
-B hook             f22-97: speech-band VO margin  +9.9 dB
-D panel04          f116-188: speech-band VO margin +11.7 dB
-D nol + zero_hit   f176-190: speech-band VO margin +17.0 dB
-E                  f188-285: speech-band VO margin +13.1 dB
-F bomb + Siapa     f286-300: speech-band VO margin  +4.3 dB
+speech f294-300: VO  -33.9 dBFS | music+SFX  -34.4 dBFS | VO margin  +0.5 dB
+6 click events; at-click SFX-to-rest (1.5-6 kHz, 5 ms): median +16.7 dB, min +7.8, max +22.7
+-- speech-band (300-4000 Hz) VO margin vs music+SFX
+  B hook           f22-97:  +9.9 dB
+  D panel04        f116-188:  +8.9 dB
+  D nol+zero_hit   f176-190: +17.0 dB
+  E                f188-285: +13.1 dB
+  F bomb+Siapa     f286-300:  +4.3 dB
+-- SFX audibility: in-band RMS over active window, and at-event 5 ms peaks
+  sfx_aperture               648- 1289 Hz  window +10.5 dB | at peak +18.9 dB
+  sfx_bomb_in                 33-   66 Hz  window  +4.9 dB | at peak +15.6 dB
+  sfx_circle_wipe            632- 1256 Hz  window  +3.0 dB | at peak +12.2 dB
+  sfx_coins                 1500- 8000 Hz  window  +3.8 dB | at peak  +3.5 dB
+  sfx_footage_reentry       1546- 3073 Hz  window  +1.5 dB | at peak +24.9 dB
+  sfx_gears_start_stop      1500- 6000 Hz  window  -2.1 dB | at peak +18.5 dB
+  sfx_text_reveal_01         765- 1520 Hz  window  +2.5 dB | at peak  +4.6 dB
+  sfx_text_reveal_02          66-  132 Hz  window  -3.6 dB | at peak  +8.1 dB
+  sfx_zero_hit                33-   66 Hz  window +10.8 dB | at peak +18.8 dB

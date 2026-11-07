@@ -1,0 +1,37 @@
+== ffprobe
+stream|codec_name=h264|profile=High|width=1080|height=1920|pix_fmt=yuv420p|color_range=tv|color_space=bt709|color_transfer=bt709|color_primaries=bt709|r_frame_rate=30/1|avg_frame_rate=30/1|nb_frames=300
+stream|codec_name=aac|profile=LC|sample_rate=48000|channels=2|r_frame_rate=0/0|avg_frame_rate=0/0|nb_frames=470
+format|duration=10.000000|size=11203264
+== blackdetect: 0 events
+== freezedetect n=0.001 d=0.5s: 0 events
+pre-limit: input I=-29.2 LUFS, gain needed 13.2 dB, limiter ceiling 0.1641 (linear)
+== pass1
+{
+	"input_i" : "-29.39",
+	"input_tp" : "-15.70",
+	"input_lra" : "1.50",
+	"input_thresh" : "-39.43",
+	"output_i" : "-16.20",
+	"output_tp" : "-2.45",
+	"output_lra" : "1.00",
+	"output_thresh" : "-26.24",
+	"normalization_type" : "dynamic",
+	"target_offset" : "0.20"
+}
+== pass2
+{
+	"input_i" : "-29.21",
+	"input_tp" : "-15.70",
+	"input_lra" : "1.20",
+	"input_thresh" : "-39.25",
+	"output_i" : "-15.82",
+	"output_tp" : "-2.31",
+	"output_lra" : "1.20",
+	"output_thresh" : "-25.86",
+	"normalization_type" : "linear",
+	"target_offset" : "-0.18"
+}
+== final MP4
+    I:         -15.8 LUFS
+    LRA:         1.3 LU
+    Peak:       -2.3 dBFS

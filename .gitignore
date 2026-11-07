@@ -4,3 +4,6 @@ remotion/public/master/
 *.wav
 .DS_Store
 remotion/public/audio_v03/
+renders/v03/SB01_v03_remotion_raw.mp4
+renders/v03/SB01_v03_mix_prelimited.wav
+renders/v03/*.log

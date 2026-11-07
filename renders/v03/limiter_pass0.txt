@@ -1,0 +1,1 @@
+pre-limit: input I=-29.2 LUFS, gain needed 13.2 dB, limiter ceiling 0.1641 (linear)
