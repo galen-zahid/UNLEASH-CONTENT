@@ -1,0 +1,15 @@
+asset,status_SB01,beat_output_frames,ref_slot,role,source,notes
+Footage master IMG_6757 M1+M2,dipakai,0-300,After panel footage,talent + audio,Drive folder 1zol06el3_... (IMG_6757.MOV),proxy CFR30 0-10.5s
+Ikon uang kertas (SVG),dipakai,116-150,ikon 3D kaos f124-f150,ilustrasi "modal gede",native SVG di SB01.tsx,dibuat sesi ini; tanpa nominal
+Pill "skill eksekusi" + toggle + kursor,dipakai,146-194,pill "switching to" f147-f180,ilustrasi "skill eksekusi nol",native HTML/CSS,
+Chip "0",dipakai,181-189,emoji pop f160-f170,kata "nol",native,bukan metrik
+Kartu "produk" + 6 tile mini-UI,dipakai,186-210,kartu "intelligent apparel" f180-f205,ilustrasi "produk bagus",native,tile tanpa teks/data
+1 Kartu Modul Belajar,tidak dipakai,-,-,-,PROMPT_6_DESAIN (tidak terakses),tidak ada slot ref di 0-10 s
+2 Kartu Latihan Praktik UI/UX,tidak dipakai,-,-,-,-,kandidat beat solusi 16-22 s
+3 Kartu Progres Latihan,tidak dipakai,-,-,-,-,kandidat; hindari metrik nyata
+4 Artwork layar laptop wireframe→UI→prototype,tidak dipakai,-,-,-,-,kandidat beat 22-28 s (ref jxdzwc9awa6j 54-58 s)
+5 Artwork layar HP UI/UX Workshop,tidak dipakai,-,-,-,-,kandidat shot berjalan (ref 9gightyfqu5k 12-14 s)
+6 Artwork checklist kertas,tidak dipakai,-,-,-,-,belum ada slot ref
+Font Source Serif 4 BI,dipakai,semua headline,headline,GSM,Google Fonts OFL,opsz 60
+Font Instrument Sans,dipakai,semua teks kecil,teks kecil,GSM,Google Fonts OFL,
+Logo TDC ITS/UNLEASH,tidak dipakai,-,-,-,Figma 652:1812,ref 0-10 s tanpa logo
