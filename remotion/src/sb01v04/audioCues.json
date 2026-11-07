@@ -1,0 +1,110 @@
+{
+  "_doc": "SB01 v04 audio placement (frames @30 fps) and group gains. Groups = delivery stems: vo, music, opening, typographic, coin, gear, transition, bomb. Each placement: [frame, gain]. Music is played as 3 frequency bands with independent ducking (frequency-aware): mid is ducked most under speech, low (kick/bass groove) and air (hats) only lightly.",
+  "fps": 30,
+  "bpm": 108,
+  "bombImpact": 297,
+  "risersInto": [
+    101,
+    194,
+    297
+  ],
+  "groups": {
+    "vo": 1.0,
+    "music": 1.0,
+    "opening": 1.0,
+    "typographic": 1.0,
+    "coin": 1.0,
+    "gear": 1.0,
+    "transition": 1.0,
+    "bomb": 1.0
+  },
+  "music": {
+    "low": {
+      "base": 0.18,
+      "duck": 0.13
+    },
+    "mid": {
+      "base": 0.14,
+      "duck": 0.028
+    },
+    "air": {
+      "base": 0.18,
+      "duck": 0.11
+    },
+    "attackFrames": 3,
+    "releaseFrames": 7,
+    "fadeInFrames": 4
+  },
+  "place": {
+    "aperture": [
+      0,
+      0.5
+    ],
+    "text_reveal_01": [
+      24,
+      0.32
+    ],
+    "text_reveal_01b": [
+      54,
+      0.32
+    ],
+    "text_reveal_02": [
+      86,
+      0.34
+    ],
+    "text_reveal_02b": [
+      242,
+      0.34
+    ],
+    "circle_wipe": [
+      99,
+      0.35
+    ],
+    "coins": [
+      112,
+      0.34
+    ],
+    "gears_start_stop": [
+      156,
+      0.34
+    ],
+    "zero_hit": [
+      179,
+      0.24
+    ],
+    "footage_reentry": [
+      194,
+      0.3
+    ],
+    "bomb_in": [
+      288,
+      0.3
+    ]
+  },
+  "files": {
+    "aperture": "sfx_aperture",
+    "text_reveal_01": "sfx_text_reveal_01",
+    "text_reveal_01b": "sfx_text_reveal_01",
+    "text_reveal_02": "sfx_text_reveal_02",
+    "text_reveal_02b": "sfx_text_reveal_02",
+    "circle_wipe": "sfx_circle_wipe",
+    "coins": "sfx_coins",
+    "gears_start_stop": "sfx_gears_start_stop",
+    "zero_hit": "sfx_zero_hit",
+    "footage_reentry": "sfx_footage_reentry",
+    "bomb_in": "sfx_bomb_in_v04"
+  },
+  "groupOf": {
+    "aperture": "opening",
+    "text_reveal_01": "typographic",
+    "text_reveal_01b": "typographic",
+    "text_reveal_02": "typographic",
+    "text_reveal_02b": "typographic",
+    "circle_wipe": "transition",
+    "footage_reentry": "transition",
+    "coins": "coin",
+    "gears_start_stop": "gear",
+    "zero_hit": "gear",
+    "bomb_in": "bomb"
+  }
+}

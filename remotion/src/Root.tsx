@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {SB01} from './sb01/SB01';
 import {SB01v03} from './sb01v03/SB01v03';
+import {SB01v04} from './sb01v04/SB01v04';
 import {FPS, H, SB01_FRAMES, W} from './lib/tokens';
 
 export const RemotionRoot: React.FC = () => (
@@ -11,5 +12,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="SB01" component={SB01} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
     {/* v03 hard rebuild (separate code in src/sb01v03; v01/v02 untouched) */}
     <Composition id="SB01-v03" component={SB01v03} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
+    {/* v04.1 frame-accurate motion rebuild + WorkshopLearningDashboard (src/sb01v04; v03 untouched) */}
+    <Composition id="SB01-v04" component={SB01v04} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
   </>
 );
