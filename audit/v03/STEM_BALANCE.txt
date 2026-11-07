@@ -1,0 +1,22 @@
+stem                          RMS dBFS peak dBFS
+vo_clean                         -33.1     -14.3   (active 10.00s)
+music_bed_ducked                 -38.8     -17.6   (active  9.97s)
+sfx_aperture                     -34.4     -20.0   (active  0.70s)
+sfx_text_reveal_01               -40.5     -25.5   (active  0.32s)
+sfx_text_reveal_02               -40.2     -22.9   (active  0.42s)
+sfx_circle_wipe                  -38.2     -22.1   (active  0.55s)
+sfx_coins                        -46.7     -30.0   (active  1.05s)
+sfx_gears_start_stop             -46.7     -28.2   (active  0.75s)
+sfx_zero_hit                     -36.5     -23.4   (active  0.60s)
+sfx_footage_reentry              -41.9     -24.5   (active  0.50s)
+sfx_bomb_in                      -36.1     -25.5   (active  0.43s)
+Remotion mix vs sum-of-stems: r = 1.0000, lag = 0 samples, level diff = -0.01 dB
+speech f22-97: VO  -32.4 dBFS | music+SFX  -42.5 dBFS | VO margin +10.1 dB
+speech f116-188: VO  -33.7 dBFS | music+SFX  -39.7 dBFS | VO margin  +6.0 dB
+speech f188-285: VO  -32.3 dBFS | music+SFX  -43.6 dBFS | VO margin +11.2 dB
+speech f294-300: VO  -33.9 dBFS | music+SFX  -35.6 dBFS | VO margin  +1.7 dB
+B hook             f22-97: speech-band VO margin  +9.9 dB
+D panel04          f116-188: speech-band VO margin +11.7 dB
+D nol + zero_hit   f176-190: speech-band VO margin +17.0 dB
+E                  f188-285: speech-band VO margin +13.1 dB
+F bomb + Siapa     f286-300: speech-band VO margin  +4.3 dB

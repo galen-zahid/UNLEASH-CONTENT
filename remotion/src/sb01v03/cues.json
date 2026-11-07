@@ -99,11 +99,11 @@
     "gears_start_stop": 156,
     "zero_hit": 179,
     "footage_reentry": 194,
-    "bomb_in": 287
+    "bomb_in": 288
   },
-  "bombImpact": 292,
+  "bombImpact": 293,
   "wipeF": [
-    293,
+    291,
     299
   ]
 }

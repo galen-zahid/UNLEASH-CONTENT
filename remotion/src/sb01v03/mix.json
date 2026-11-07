@@ -1,16 +1,22 @@
 {
-  "_doc": "Mix levels (linear gain) shared by the Remotion <Audio> tracks and tools/export_stems_v03.py. Ducking windows = cues.speech.",
+  "_doc": "Mix levels (linear gain) shared by the Remotion <Audio> tracks and tools/export_stems_v03.py. Ducking windows = cues.speech. v03 mix pass 2: VO margin target >= +8 dB over music+SFX inside speech windows (pass 1 measured only +3/-3 dB).",
   "vo": 1.0,
-  "music": {"base": 0.42, "duck": 0.16, "attackFrames": 4, "releaseFrames": 8, "fadeInFrames": 12},
+  "music": {
+    "base": 0.34,
+    "duck": 0.06,
+    "attackFrames": 4,
+    "releaseFrames": 8,
+    "fadeInFrames": 12
+  },
   "sfx": {
-    "aperture": 0.55,
-    "text_reveal_01": 0.55,
-    "text_reveal_02": 0.6,
-    "circle_wipe": 0.6,
-    "coins": 0.55,
-    "gears_start_stop": 0.6,
-    "zero_hit": 0.7,
-    "footage_reentry": 0.55,
-    "bomb_in": 0.7
+    "aperture": 0.5,
+    "text_reveal_01": 0.3,
+    "text_reveal_02": 0.32,
+    "circle_wipe": 0.35,
+    "coins": 0.2,
+    "gears_start_stop": 0.22,
+    "zero_hit": 0.24,
+    "footage_reentry": 0.3,
+    "bomb_in": 0.15
   }
 }

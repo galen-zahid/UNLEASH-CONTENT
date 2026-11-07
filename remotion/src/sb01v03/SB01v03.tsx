@@ -436,7 +436,7 @@ const LiveE: React.FC = () => {
   const rad = track(f, CARD.r, INOUT);
   const rot = track(f, CARD.rot, OUT);
   const focus = track(f, [[230, 0], [232, 12], [235, 3], [237, 0]], INOUT);
-  const push = track(f, [[230, 1], [237, 1.06], [287, 1.06], [CUES.bombImpact, 1.2]], [OUT, (t) => t, IN]);
+  const push = track(f, [[230, 1], [237, 1.06], [288, 1.06], [CUES.bombImpact, 1.22]], [OUT, (t) => t, OUT]);
   const vig = lerp(f, 230, 234, 0, 1);
   return (
     <AbsoluteFill style={{perspective: 1800}}>
@@ -577,8 +577,8 @@ const TypeE2: React.FC = () => {
   const uS = track(f, [[WD.personal, 1.3], [WD.personal + 5, 0.96], [WD.personal + 8, 1]], [OUT, INOUT]);
   const slash = lerp(f, WD.personal + 5, WD.personal + 12, 1, 0);
   // Beat F bomb-in
-  const bomb = track(f, [[287, 1], [CUES.bombImpact, 1.18]], IN);
-  const bombY = lerp(f, 287, CUES.bombImpact, 0, -90, IN);
+  const bomb = track(f, [[288, 1], [CUES.bombImpact, 1.2]], OUT);
+  const bombY = lerp(f, 288, CUES.bombImpact, 0, -120, OUT);
   return (
     <AbsoluteFill style={{transformOrigin: `50% ${y0 + 200}px`, transform: `translateY(${bombY}px) scale(${bomb})`}}>
       <div style={{position: 'absolute', left: 0, width: W, top: y0, display: 'flex', justifyContent: 'center'}}>
@@ -612,7 +612,7 @@ const TransferWipe: React.FC = () => {
   // diagonal band travelling from bottom-right to top-left; at f299 the teal body covers the frame except
   // the top-left corner where the gold leading edge is still travelling (hand-off to SB02, never flat black)
   const p = track(f, [[CUES.wipeF[0], 0], [CUES.wipeF[1], 1]], INOUT);
-  const d = interpolate(p, [0, 1], [1.25, -0.36]) * Math.hypot(W, H);
+  const d = interpolate(p, [0, 1], [0.55, -0.36]) * Math.hypot(W, H); // starts at the bottom-right corner (no off-screen dead time)
   return (
     <AbsoluteFill style={{overflow: 'hidden'}}>
       <div style={{position: 'absolute', left: W / 2, top: H / 2, width: 0, height: 0, transform: 'rotate(-35deg)'}}>
@@ -664,7 +664,7 @@ export const SB01v03: React.FC = () => {
         </MB>
       )}
       {f >= WD.kalau2 && (
-        <MB windows={[[WD.personal, WD.personal + 6], [287, 293]]}>
+        <MB windows={[[WD.personal, WD.personal + 6], [288, 294]]}>
           <TypeE2 />
         </MB>
       )}
