@@ -84,9 +84,9 @@ export const LiveOpen: React.FC = () => {
 // ======================= DOODLES =======================
 /** Ref f3–f17: a white brush stroke travels around the head (dash segment moving along a path, trailing). */
 /** a dash segment travelling along a path (lead = head position 0..1, seg = trail length) */
-const Trail: React.FC<{d: string; lead: number; seg: number; op: number; w: number}> = ({d, lead, seg, op, w}) => (
+const Trail: React.FC<{d: string; lead: number; seg: number; op: number; w: number; color?: string}> = ({d, lead, seg, op, w, color = IVORY}) => (
   <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: op}}>
-    <path d={d} stroke={IVORY} strokeWidth={w} strokeLinecap="round" fill="none" pathLength={1} strokeDasharray={`${seg} 2`} strokeDashoffset={-(lead - seg)} style={{filter: 'drop-shadow(0 3px 0 rgba(9,41,47,0.5))'}} />
+    <path d={d} stroke={color} strokeWidth={w} strokeLinecap="round" fill="none" pathLength={1} strokeDasharray={`${seg} 2`} strokeDashoffset={-(lead - seg)} style={{filter: 'drop-shadow(0 3px 0 rgba(9,41,47,0.5))'}} />
   </svg>
 );
 
@@ -309,5 +309,33 @@ export const OpeningType: React.FC = () => {
       {/* typographic accent dot under hero 1 (ref white dot under "One Thing" f36–f50) */}
       {f >= 36 && f < 52 && <div style={{position: 'absolute', left: 0.5 * W - 7, top: HERO_Y + S1 * 1.18, width: 14, height: 14, borderRadius: 7, background: IVORY, opacity: 1 - out1}} />}
     </AbsoluteFill>
+  );
+};
+
+/** Ref f75–f96: the pink accent keeps moving around "LOOking" (small loops/ticks). v04: two orange trailing
+ *  strokes around hero 2 between the full-frame expand and the box (f74–f87), then the loop scribble f88–f94. */
+export const Hero2Doodles: React.FC = () => {
+  const f = useCurrentFrame();
+  if (f < 74 || f > 88) return null;
+  const y = 0.575 * H;
+  return (
+    <>
+      <Trail
+        d={`M ${0.84 * W} ${y + 30} C ${0.9 * W} ${y - 40}, ${0.8 * W} ${y - 90}, ${0.74 * W} ${y - 40}`}
+        lead={mono([[74, 0], [78, 0.7], [81, 1]])(f)}
+        seg={interpolate(f, [74, 76, 79, 81], [0.12, 0.55, 0.5, 0.05], K)}
+        op={interpolate(f, [74, 75, 80, 82], [0, 1, 1, 0], K)}
+        w={14}
+        color={C.orange1}
+      />
+      <Trail
+        d={`M ${0.16 * W} ${y + 150} C ${0.12 * W} ${y + 110}, ${0.13 * W} ${y + 60}, ${0.2 * W} ${y + 52}`}
+        lead={mono([[80, 0], [84, 0.75], [87, 1]])(f)}
+        seg={interpolate(f, [80, 82, 85, 87], [0.12, 0.6, 0.5, 0.05], K)}
+        op={interpolate(f, [80, 81, 86, 88], [0, 1, 1, 0], K)}
+        w={12}
+        color={C.orange1}
+      />
+    </>
   );
 };

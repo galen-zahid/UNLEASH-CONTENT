@@ -8,7 +8,7 @@ import {BACK, IN, INOUT, OUT, track} from '../lib/anim';
 import {loadFonts} from '../lib/fonts';
 import {C, CYAN_LABEL, H, ORANGE_SIMPLE, W} from '../lib/tokens';
 import {AudioMix} from './AudioMix';
-import {LiveOpen, OpeningScribble, OpeningScribble2, OpeningType} from './Opening';
+import {Hero2Doodles, LiveOpen, OpeningScribble, OpeningScribble2, OpeningType} from './Opening';
 import {CAM_E, WIPE_R} from './refTracks';
 import {DashboardPoor, UiuxType} from './UiuxBeat';
 import {COIN_T, COIN_W, Coin, Gear, Grain} from './Illustration';
@@ -306,7 +306,7 @@ const TypeE1: React.FC = () => {
   return (
     <AbsoluteFill style={{transform: `translateY(${-ex * 600}px)`, opacity: 1 - ex}}>
       <div style={{position: 'absolute', left: 0.08 * W, top: 0.07 * H, display: 'flex', gap: S_DAN * 0.28}}>
-        <Mask p={lerp(f, 197, 202, 0, 1)}>
+        <Mask p={lerp(f, 198, 203, 0, 1)}>
           <Sans text="dan" size={S_DAN} color={INK} shadow={false} />
         </Mask>
         <Mask p={lerp(f, WD.percuma2, WD.percuma2 + 5, 0, 1)}>
@@ -342,9 +342,10 @@ export const SB01v04: React.FC = () => {
       {f <= 106 && <LiveOpen />}
       {f <= 106 && <Plate op={plateB} />}
       {f <= 106 && (
-        <MB windows={[[3, 37], [54, 64], [86, 95], [97, 106]]} samples={6}>
+        <MB windows={[[3, 37], [54, 64], [74, 95], [97, 106]]} samples={6}>
           <OpeningScribble />
           <OpeningScribble2 />
+          <Hero2Doodles />
           <OpeningType />
         </MB>
       )}
@@ -366,7 +367,7 @@ export const SB01v04: React.FC = () => {
       )}
       {f >= 230 && <Plate op={plateE} />}
       {f >= 251 && (
-        <MB windows={[[251, 264], [287, 299]]} samples={16} shutter={160}>
+        <MB windows={[[251, 264], [287, 299]]} samples={24} shutter={160}>
           <DashboardPoor />
         </MB>
       )}
