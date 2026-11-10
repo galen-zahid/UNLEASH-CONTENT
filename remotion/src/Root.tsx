@@ -4,6 +4,7 @@ import {SB01} from './sb01/SB01';
 import {SB01v03} from './sb01v03/SB01v03';
 import {SB01v04} from './sb01v04/SB01v04';
 import {SB01v05} from './sb01v05/SB01v05';
+import {SB01v051} from './sb01v051/SB01v051';
 import {FPS, H, SB01_FRAMES, W} from './lib/tokens';
 
 export const RemotionRoot: React.FC = () => (
@@ -17,5 +18,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="SB01-v04" component={SB01v04} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
     {/* v05: user review fixes — UANG? tracking, opening stack spacing, redesigned (tidy) workshop dashboard */}
     <Composition id="SB01-v05" component={SB01v05} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
+    {/* v05.1: WorkshopDashboardFragment (compact 2.5D), lighter GSM-style type treatment, cream → white */}
+    <Composition id="SB01-v051" component={SB01v051} durationInFrames={SB01_FRAMES} fps={FPS} width={W} height={H} />
   </>
 );
