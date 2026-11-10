@@ -114,8 +114,19 @@ export const Mask: React.FC<{p: number; dir?: 'up' | 'down' | 'left' | 'right'; 
   children,
   pad = 40,
 }) => {
-  const d = (1 - p) * 110;
-  const tr = dir === 'up' ? `translateY(${d}%)` : dir === 'down' ? `translateY(${-d}%)` : dir === 'left' ? `translateX(${d}%)` : `translateX(${-d}%)`;
+  // travel = own size + the padding (the padding exists so shadows are not clipped; without adding it, short
+  // words peeked through before their entrance — bug found in v04 QA at f196–f200)
+  const d = (1 - p) * 105;
+  const px = (1 - p) * pad;
+  const tr =
+    dir === 'up'
+      ? `translateY(calc(${d}% + ${px}px))`
+      : dir === 'down'
+        ? `translateY(calc(${-d}% - ${px}px))`
+        : dir === 'left'
+          ? `translateX(calc(${d}% + ${px}px))`
+          : `translateX(calc(${-d}% - ${px}px))`;
+  if (p >= 1) return <>{children}</>;
   return (
     <div style={{overflow: 'hidden', padding: pad, margin: -pad, display: 'inline-block'}}>
       <div style={{transform: tr}}>{children}</div>
