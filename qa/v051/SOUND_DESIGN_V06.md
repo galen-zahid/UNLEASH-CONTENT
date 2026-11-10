@@ -53,3 +53,20 @@ Video ternyata jatuh pas di grid **137.8 BPM (nuansa half-time, karakter mirip r
 3. Tick bernada di U-A-N-G-?: tidak norak.
 4. Klik gagal kursor (f283) terdengar "salah".
 5. Level musik di bawah dialog.
+
+## v06b — musik di awal tidak terdengar (feedback pengguna)
+**Penyebab (terukur):**
+- 0–2 s musik hanya −44/−50 dBFS (intro terlalu redam).
+- Setelah itu ±90 % energi musik ada di bawah 150 Hz (kick/808), padahal **speaker HP/laptop hampir tidak memutar < 150 Hz**. Musik baru "muncul" saat riser UI/UX karena riser berfrekuensi lebih tinggi.
+
+**Perbaikan:**
+- Intro hadir sejak 0 s: filter dibuka (pad 900 Hz, hat 4 kHz, pluck 1.4 kHz → terbuka saat drop), pluck main sejak awal, hat tidak dilemahkan.
+- Kick diberi klik beater 1.8–6 kHz + harmonik ke-2; 808 diberi harmonik ke-2/3, supaya bas terbaca di speaker kecil.
+- Hat dan shaker 16th lebih keras; pad +4 dB.
+- Mix: pita mid ×0.75 (ducking 0.45), air ×0.8 (0.6), low ×0.48 (0.62), riser ×0.3.
+
+**Diukur dengan simulasi speaker HP (HPF 180 Hz), musik vs suara talent per detik (dBFS):**
+- sebelum: 0–1 −40.7/−41.6, 1–2 **−47.0/−23.1**, 2–3 −38.9/−22.2, 3–10 umumnya 12–14 dB di bawah VO
+- v06b: 0–1 −34.0/−42.1, 1–2 −38.4/−23.6, 2–3 −30.9/−22.7, 3–4 −28.8/−25.6, 4–5 −29.8/−23.4, 5–6 −33.5/−27.5, 6–7 −33.5/−22.3, 7–8 −30.1/−23.3, 8–9 −32.6/−22.3, 9–10 −25.6/−29.1
+
+Groove pita hat 137.9 BPM, kekuatan 0.54 (v04 0.37, v03 0.22). Margin suara talent di pita bicara: +6.8 / +6.0 / +5.5 dB; F −0.2 dB (0.47 s impact bomb + awal "Siapa"). Master −16.0 LUFS / −2.1 dBTP. File: `renders/v06/SB01_V051_SOUND_V06B.mp4`.

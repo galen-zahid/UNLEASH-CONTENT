@@ -74,3 +74,8 @@ for group in ['opening', 'typographic', 'coin', 'gear', 'transition', 'ui', 'bom
         xb, rb_ = signal.sosfilt(bs, xs), signal.sosfilt(bs, r[s:e]); ex = np.array([np.sqrt((xb[i:i+240]**2).mean()) for i in range(0, len(xb)-240, 240)]); er = np.array([np.sqrt((rb_[i:i+240]**2).mean()) for i in range(0, len(rb_)-240, 240)])
         k = ex.argmax(); res.append(20*np.log10(ex[k]/(er[k]+1e-12)))
     print(f'  {group:12s} SFX at-peak over rest: min {min(res):+5.1f}  median {np.median(res):+5.1f} dB  ({len(res)} events)')
+# phone-speaker simulation: high-pass 180 Hz (small speakers reproduce little below that)
+hpf = signal.butter(4, 180, btype='high', fs=SR, output='sos')
+mph = signal.sosfilt(hpf, (stems['music'] * g).mean(1)); vph = signal.sosfilt(hpf, (stems['vo'] * g).mean(1))
+print('  PHONE SIM (HPF 180 Hz) music vs VO per second:')
+print('   ' + ' '.join(f'{s}-{s+1}s:{lv(mph[s*SR:(s+1)*SR]):5.1f}/{lv(vph[s*SR:(s+1)*SR]):5.1f}' for s in range(10)))

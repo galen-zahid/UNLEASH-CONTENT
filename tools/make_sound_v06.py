@@ -1,4 +1,4 @@
-"""UNLEASH sound design v06 — original music + SFX, written for the picture (not generic library placement).
+"""UNLEASH sound design v06 (v06b: intro present from 0 s, bass harmonics + louder hats/shaker/pluck so the music reads on phone speakers) — original music + SFX, written for the picture (not generic library placement).
 
 Musical grid: 137.8 BPM half-time feel, beat phase locked so key picture events land on beats
 (expand 2.50 s, UANG? 2.94 s, wipe 3.37 s, NOL 5.98 s, re-entry 6.42 s, UI/UX 8.16 s, bomb 9.90 s).
@@ -114,6 +114,8 @@ def k_sample():
     tt = t_of(int(0.5 * SR)); f = 42 + 120 * np.exp(-tt * 34)
     x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 6.5)
     x[: int(0.003 * SR)] += noise(int(0.003 * SR)) * 0.35
+    x[: int(0.012 * SR)] += bp(noise(int(0.012 * SR)), 1800, 6000) * np.exp(-np.arange(int(0.012 * SR)) / SR * 300) * 0.9  # v06b: beater click for phone speakers
+    x += np.sin(2 * np.pi * 2 * np.cumsum(f) / SR) * np.exp(-tt * 14) * 0.35  # 2nd harmonic of the body
     return np.tanh(x * 1.6) * 0.8
 
 
@@ -143,22 +145,28 @@ for k in range(FIRST, LAST):
             n = int(BEAT * (2 if bar_pos == 0 else 1.4) * SR); tt = t_of(n)
             f = ROOT[ci] * (1 + 0.6 * np.exp(-tt * 40))
             sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.minimum(1, tt / 0.004) * np.exp(-tt * 1.6)
-            add(bass, np.tanh(sub * 1.4) * 0.55, t + (0 if bar_pos == 0 else BEAT * 0.5))
+            harm = np.sin(2 * np.pi * 2 * np.cumsum(f) / SR) * 0.45 + np.sin(2 * np.pi * 3 * np.cumsum(f) / SR) * 0.25  # v06b: harmonics so the bass reads on small speakers
+            env = np.minimum(1, tt / 0.004) * np.exp(-tt * 1.6)
+            add(bass, (np.tanh(sub * 1.4) * 0.55 + np.tanh(harm * env * 1.2) * 0.3), t + (0 if bar_pos == 0 else BEAT * 0.5))
     # hats: 8ths always after the drop, 16th rolls into transitions; filtered intro before the drop
     for sub8 in range(2):
         th = t + sub8 * BEAT / 2
         if th < 0 or (STOP0 - 0.02 < th < BACK - 0.02): continue
         n = int(0.06 * SR); h = hp(noise(n), 7000) * env_exp(n, 75)
-        g = (0.10 if sub8 else 0.06) * (0.55 if th < DROP else 1.0)
+        g = (0.17 if sub8 else 0.11) * (0.85 if th < DROP else 1.0)  # v06b: louder, intro present
         add(hats, h * g, th, pan=0.28 if sub8 else -0.12)
-    # pluck motif (syncopated 16ths) after the drop
-    if groove:
+    # 16th shaker (v06b)
+    if not (STOP0 - 0.02 < t < BACK - 0.02) and t >= 0:
+        for s16 in (1, 3):
+            n = int(0.045 * SR); add(hats, hp(noise(n), 6000) * env_exp(n, 95) * 0.06, t + s16 * BEAT / 4, pan=-0.3)
+    # pluck motif (syncopated 16ths): v06b also plays (filtered) in the intro
+    if (groove or t < DROP) and t >= 0:
         ci = ((k - FIRST) // 4) % 4
         for j, s16 in enumerate([0, 3] if bar_pos in (0, 2) else [2]):
             fr = CHORD[ci][(k + j) % 3] * 2
             n = int(0.32 * SR); tt = t_of(n)
             pl = (np.sin(2 * np.pi * fr * tt) + 0.4 * np.sin(4 * np.pi * fr * tt) + 0.15 * np.sin(6 * np.pi * fr * tt)) * np.exp(-tt * 13)
-            add(keys, pl * 0.08, t + s16 * BEAT / 4, pan=-0.35 if j % 2 else 0.35)
+            add(keys, pl * (0.11 if t >= DROP else 0.08), t + s16 * BEAT / 4, pan=-0.35 if j % 2 else 0.35)
 
 # 16th hat roll + snare roll into the wipe and into the bomb
 for (a, b, gs) in [(WIPE - 0.42, WIPE, 0.6), (BOMB - 0.85, BOMB, 1.0)]:
@@ -176,7 +184,7 @@ for i, b0 in enumerate(bar_starts):
     for fr in CHORD[ci]:
         for det in (-0.18, 0.18):
             x += sum(np.sin(2 * np.pi * fr / 2 * (1 + det / 100) * h * tt + rng.uniform(0, 6)) / h for h in range(1, 6))
-    x *= np.minimum(1, tt / 0.12) * np.minimum(1, (tt[-1] - tt + 1e-3) / 0.2) * 0.010
+    x *= np.minimum(1, tt / 0.12) * np.minimum(1, (tt[-1] - tt + 1e-3) / 0.2) * 0.016  # v06b: +4 dB
     add(pad, x, b0, pan=0)
 
 pad[:, 0] = lp(pad[:, 0], 2400); pad[:, 1] = lp(pad[:, 1], 2400)
@@ -190,7 +198,7 @@ def sweep_lp(x, t0, t1, f0, f1):
         for c in range(2):
             y[i:i + blk, c], zi[:, c] = signal.sosfilt(sos, x[i:i + blk, c], zi=zi[:, c])
     return y
-pad = sweep_lp(pad, 0, DROP, 350, 9000); hats = sweep_lp(hats, 0, DROP, 1200, 16000)
+pad = sweep_lp(pad, 0, DROP, 900, 9000); hats = sweep_lp(hats, 0, DROP, 4000, 16000); keys = sweep_lp(keys, 0, DROP, 1400, 12000)  # v06b: intro audible
 
 # risers / transitions baked into the track (musical, not SFX)
 def riser(d, f0, f1, g):

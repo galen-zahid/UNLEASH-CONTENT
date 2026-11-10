@@ -10,16 +10,16 @@
    "music_fx"
   ],
   "gain": {
-   "music_low": 0.5,
-   "music_mid": 0.5,
-   "music_air": 0.5,
-   "music_fx": 0.5
+   "music_low": 0.48,
+   "music_mid": 0.75,
+   "music_air": 0.8,
+   "music_fx": 0.3
   },
   "duck": {
-   "music_low": 0.72,
-   "music_mid": 0.35,
-   "music_air": 0.62,
-   "music_fx": 0.5
+   "music_low": 0.62,
+   "music_mid": 0.45,
+   "music_air": 0.6,
+   "music_fx": 0.4
   }
  },
  "place": [
@@ -27,217 +27,220 @@
    "opening",
    "aperture_open",
    0.0,
-   0.55
+   0.385
   ],
   [
    "opening",
    "grid_tick",
    0.03333333333333333,
-   0.4
+   0.28
   ],
   [
    "typographic",
    "type_hero",
    0.7633333333333334,
-   0.5
+   0.19
   ],
   [
    "typographic",
    "type_hero",
    1.03,
-   0.38
+   0.144
   ],
   [
    "typographic",
    "type_hero",
    1.7633333333333332,
-   0.5
+   0.19
   ],
   [
    "typographic",
    "type_hero",
    1.9633333333333332,
-   0.38
+   0.144
   ],
   [
    "typographic",
    "type_small",
    2.3333333333333335,
-   0.4
+   0.152
   ],
   [
    "typographic",
    "type_small",
    2.6,
-   0.4
+   0.152
   ],
   [
    "typographic",
    "type_small",
    2.6,
-   0.35
+   0.133
   ],
   [
    "typographic",
    "letter_1",
    2.933333333333333,
-   0.42
+   0.16
   ],
   [
    "typographic",
    "letter_2",
    2.966666666666667,
-   0.42
+   0.16
   ],
   [
    "typographic",
    "letter_3",
    3.0,
-   0.42
+   0.16
   ],
   [
    "typographic",
    "letter_4",
    3.033333333333333,
-   0.42
+   0.16
   ],
   [
    "typographic",
    "letter_5",
    3.066666666666667,
-   0.42
+   0.16
   ],
   [
    "transition",
    "prewipe_swell",
    3.033333333333333,
-   0.5
+   0.25
   ],
   [
    "transition",
    "wipe_whoosh",
    3.3666666666666667,
-   0.55
+   0.275
   ],
   [
    "coin",
    "coin_1",
    3.933333333333333,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_2",
    4.033333333333333,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_3",
    4.133333333333334,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_4",
    4.233333333333333,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_5",
    4.333333333333333,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_6",
    4.433333333333334,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_7",
    4.533333333333333,
-   0.36
+   0.18
   ],
   [
    "coin",
    "coin_8",
    4.633333333333334,
-   0.36
+   0.18
   ],
   [
    "gear",
    "gears_run_stall",
    5.2,
-   0.5
+   0.3
   ],
   [
    "gear",
    "nol_boom",
    5.966666666666667,
-   0.62
+   0.372
   ],
   [
    "transition",
    "card_rise",
    6.466666666666667,
-   0.45
+   0.225
   ],
   [
    "transition",
    "focus_breath",
    7.633333333333334,
-   0.4
+   0.2
   ],
   [
    "typographic",
    "type_small",
    7.7,
-   0.35
+   0.133
   ],
   [
    "typographic",
    "type_hero_big",
    8.01,
-   0.55
+   0.209
   ],
   [
    "ui",
    "ui_card_pop",
    8.233333333333333,
-   0.45
+   0.225
   ],
   [
    "ui",
    "ui_card_pop_small",
    8.633333333333333,
-   0.4
+   0.2
   ],
   [
    "ui",
    "ui_card_pop_small",
    9.233333333333333,
-   0.3
+   0.15
   ],
   [
    "ui",
    "ui_click_fail",
    9.433333333333334,
-   0.45
+   0.225
   ],
   [
    "ui",
    "ui_blip",
    9.466666666666667,
-   0.35
+   0.175
   ],
   [
    "bomb",
    "bomb_impact",
    9.6,
-   0.6
+   0.231
   ]
- ]
+ ],
+ "_mixpass": "pass 3: SFX groups scaled (typo .38 coin .5 gear .6 trans .5 ui .5 bomb .55 opening .7) after speech-band analysis showed SFX, not music, masking the VO",
+ "_mixpass4": "pass 4 (user: \"musiknya dikerasin dikit\"): all music bands +3 dB",
+ "_mixpass5": "pass 5 (user: music missing at the start / only audible at UI/UX): v06b arrangement (intro present, bass harmonics, louder hats/shaker/pluck) + mid/air bands up, shallower mid duck; judged with a phone-speaker simulation (HPF 180 Hz)"
 }
