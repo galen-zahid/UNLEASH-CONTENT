@@ -1,0 +1,27 @@
+== ffprobe
+stream|codec_name=h264|profile=High|width=1080|height=1920|pix_fmt=yuv420p|color_range=tv|color_space=bt709|color_transfer=bt709|color_primaries=bt709|r_frame_rate=30/1|avg_frame_rate=30/1|nb_frames=300
+stream|codec_name=aac|profile=LC|sample_rate=48000|channels=2|r_frame_rate=0/0|avg_frame_rate=0/0|nb_frames=470
+format|duration=10.000000|size=11545892
+== blackdetect d>=0.03 pix_th=0.08: 0 events
+== freezedetect n=0.001 d=0.5s: 0 events
+== final MP4 loudness (after AAC)
+    I:         -16.0 LUFS
+    LRA:         1.0 LU
+    Peak:       -2.4 dBFS
+== audio metrics (unchanged mix)
+Remotion mix vs numpy mirror: r = 1.00000, level diff -0.01 dB
+premaster I -28.80 LUFS TP -14.70 | limiter ceiling 0.1758 | pass1 I -28.73 TP -15.10 | pass2 linear out I -16.03 TP -2.42 | ebur128 final I -16.0 TP -2.4 | linear gain +12.73 dB
+limiter/loudnorm delay vs premaster: 0 samples
+tempo FULL MIX 107.1 BPM (strength 0.08) | MUSIC ONLY 107.1 BPM (0.31) | target 108
+music vs VO (broadband): whole 3.1 dB under VO
+  speech f22-97: music  +4.7 dB under VO
+  speech f116-188: music  +3.6 dB under VO
+  speech f188-285: music  +4.1 dB under VO
+  speech f294-300: music  +8.7 dB under VO
+  speech-band VO margin B f22-97:  +8.1 dB
+  speech-band VO margin D f116-188: +10.0 dB
+  speech-band VO margin E f188-285: +12.1 dB
+  speech-band VO margin F f286-300:  +5.6 dB
+music RMS: gaps -21.7 dBFS, under speech -23.9 dBFS (ducking depth 2.1 dB)
+v04 FULL MIX groove: kick band 109.1 BPM strength 0.20 | hat band 142.9 BPM strength 0.37
+v03 FULL MIX groove: kick band 122.4 BPM strength 0.10 | hat band 120.0 BPM strength 0.22

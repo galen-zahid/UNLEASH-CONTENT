@@ -1,6 +1,6 @@
-# QA_REPORT_v04 — SB01 V04.1 isolated tests (bukan render penuh)
+# QA_REPORT_v04 — SB01 V04.1
 
-Status: **tes terisolasi untuk review, BUKAN final**. Sesuai brief, render 10 s penuh belum dibuat. v01–v03 utuh; v04 = `remotion/src/sb01v04/` (composition `SB01-v04`).
+Status: tes terisolasi sudah direview; atas permintaan pengguna ("lanjutin") dilanjutkan ke **render final 10 s** `renders/v04/SB01_V04.mp4` (lihat bagian *Final* di bawah). SB02/SB03 belum dikerjakan. v01–v03 utuh; v04 = `remotion/src/sb01v04/` (composition `SB01-v04`).
 
 ## Deliverable
 | File | Isi |
@@ -75,5 +75,23 @@ Proxy v03 dipakai ulang tanpa perubahan (`hqdn3d=1.5:1.2:5:4` + koreksi warna, k
 9. `VO_REPLACEMENT_PENDING`: audio 8.12–8.76 s masih berbunyi "personal branding". "nggak dipikirin" masih usulan copy.
 10. Panel 04 (3.9–6.6 s) dipertahankan dari v03 dan tidak termasuk tes terisolasi ini.
 
-## Tidak dikerjakan (sesuai brief)
-Render 10 s penuh, SB02, dan SB03.
+## Final (setelah tes terisolasi)
+Perubahan setelah tes `_r1`:
+- coretan aksen orange di sekitar hero 2 (f74–f87), padanan coretan pink yang terus bergerak di sekitar "LOOking" (ref f75–f96);
+- motion blur bomb-in dinaikkan ke 24 sampel / 160° sehingga streak bertingkat berkurang;
+- **bug `Mask` diperbaiki**: kata kecil sempat mengintip sebelum entrance karena geseran tidak menghitung padding bayangan. Ditemukan di QA transisi f196–f200; v03 punya bug yang sama tetapi tidak diubah;
+- "dan" baru masuk setelah kartu kolaps hilang (f199).
+
+| Gate | Hasil | Bukti |
+|---|---|---|
+| Format | 1080×1920, 30/1 CFR, 300 f, 10.000 s, H.264 High, yuv420p, tv, BT.709 | `audit/v04/QC_FINAL_v04.txt` |
+| Frame hitam / beku | 0 / 0 | idem |
+| Loudness final MP4 (setelah AAC) | −16.0 LUFS, TP −2.4 dBTP | idem |
+| Sync audio vs master | −0.94 ms konstan (dari kompensasi VO cleanup) | idem |
+| Transisi −2…+2 | f20, 75, 106, 117, 198, 230, 243, 292 tanpa lompatan atau dead frame | `qa/v04/TRANSITIONS_V04_m2_p2.png` |
+| Mobile 360×640 | hero, label Panel 04, dan copy dashboard utama terbaca | `qa/v04/MOBILE_360x640_V04.png` |
+| Perbandingan | REF \| v03 \| V04 (0–10 s), REF \| V04 (0–10 s), REF \| V04 (dua segmen tes) | `renders/v04/SB01_REF_vs_v03_vs_V04.mp4`, `REF_AFTER_vs_SB01_V04_full_0-10s.mp4`, `REF_AFTER_vs_SB01_V04.mp4`, `qa/v04/SB01_REF_v03_V04_beats_grid.png` |
+
+Tes terisolasi (`SB01_V04_OPENING_TEST.mp4`, `SB01_V04_UIUX_TEST.mp4`) kini dipotong frame-akurat dari final; versi pertama disimpan sebagai `*_r1.mp4`.
+
+Perbedaan tersisa dan status `VO_REPLACEMENT_PENDING` tetap seperti daftar di atas. SB02 dan SB03 belum dikerjakan.
