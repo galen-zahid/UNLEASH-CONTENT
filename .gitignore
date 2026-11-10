@@ -15,3 +15,5 @@ renders/v051/_raw_*.mp4
 remotion/public/audio_ref/*.wav
 renders/v06/_*.wav
 remotion/public/audio_v06/*.wav
+remotion/public/audio_sb02/*.wav
+renders/sb02/_*

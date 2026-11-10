@@ -1,0 +1,19 @@
+Remotion SB02 mix vs numpy mirror: r = 1.00000, level diff -0.00 dB
+joint premaster I -25.2 TP -7.8 | pass2 linear | JOIN 20 s I -16.0 TP -2.0 | SB02 half alone I -15.6 TP -2.0
+  music continuity at the 10.0 s boundary (RMS dBFS, 0.5 s windows): before -16.7 | after -17.4
+  max sample step across boundary (music): 0.0016 (no discontinuity if ≈ typical 0.1898)
+  speech-band VO margin percaya       +5.4 dB | music  -5.8 dB under VO
+  speech-band VO margin nah..kalian   +4.5 dB | music  -5.9 dB under VO
+  speech-band VO margin kabar..ilmu   +5.5 dB | music  -4.5 dB under VO
+  PHONE SIM (HPF 180 Hz) music/VO dBFS per second: 0:-32/-26 1:-24/-35 2:-27/-35 3:-33/-24 4:-31/-24 5:-33/-26 6:-27/-25 7:-32/-26 8:-31/-26 9:-24/-35
+  text       SFX at-peak over rest: min  -7.3 median  +7.4 dB (11 events)
+  card       SFX at-peak over rest: min  -8.4 median  +4.6 dB (11 events)
+  ui         SFX at-peak over rest: min -12.8 median  -2.7 dB (9 events)
+  transition SFX at-peak over rest: min  -0.6 median +14.9 dB (5 events)
+  VO mute region 9.05–10.0 s (personal branding): VO level -31.3 dBFS (room tone), music -13.5 dBFS
+  SB01 f22-97: VO-music +10.6  VO-sfx  +9.1
+  SB01 f116-188: VO-music  +9.8  VO-sfx  +8.4
+  SB01 f188-285: VO-music  +9.7  VO-sfx  +7.6
+  SB02 f0-26: VO-music  +9.8  VO-sfx  +7.2
+  SB02 f88-188: VO-music +10.3  VO-sfx  +5.9
+  SB02 f200-270: VO-music  +9.8  VO-sfx  +7.4

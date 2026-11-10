@@ -1,0 +1,1 @@
+[0:a]highpass=f=80:p=2,asplit=2[d][w];[w]anlmdn=s=1.5:p=0.004:r=0.006:m=15,atrim=start_sample=480,asetpts=PTS-STARTPTS[n];[d]volume=0.35[dd];[n]volume=0.65[nn];[dd][nn]amix=inputs=2:normalize=0,equalizer=f=250:t=q:w=1.2:g=-1.5,equalizer=f=3800:t=q:w=1.0:g=2.5,acompressor=threshold=-24dB:ratio=2:attack=8:release=150:makeup=2[o]
