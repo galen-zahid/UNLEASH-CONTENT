@@ -7,7 +7,7 @@ import {CameraMotionBlur} from '@remotion/motion-blur';
 import {BACK, IN, INOUT, OUT, track} from '../lib/anim';
 import {loadFonts} from '../lib/fonts';
 import {C, CYAN_LABEL, H, ORANGE_SIMPLE, W} from '../lib/tokens';
-import {AudioMix} from './AudioMix';
+import {AudioMixV06} from './AudioMixV06';
 import {Hero2Doodles, LiveOpen, OpeningScribble, OpeningScribble2, OpeningType} from './Opening';
 import {CAM_E, WIPE_R} from './refTracks';
 import {UiuxType, WorkshopFragmentScene} from './UiuxBeat';
@@ -376,7 +376,7 @@ export const SB01v051: React.FC = () => {
           <UiuxType />
         </MB>
       )}
-      <AudioMix />
+      <AudioMixV06 />
     </AbsoluteFill>
   );
 };

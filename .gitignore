@@ -13,3 +13,5 @@ remotion/public/audio_v04/
 renders/v05/_raw_*.mp4
 renders/v051/_raw_*.mp4
 remotion/public/audio_ref/*.wav
+renders/v06/_*.wav
+remotion/public/audio_v06/*.wav
