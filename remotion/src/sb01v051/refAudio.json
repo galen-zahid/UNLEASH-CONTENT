@@ -109,5 +109,74 @@
         "at": 9.78
       }
     ]
+  },
+  "C": {
+    "_doc": "BASE = our own V05.1 mix (108 BPM music + our SFX, premaster). The reference is NOT used 1:1: only reference transient slices with real content are LAYERED where our video had no sound or where the same role exists at the same time (audit/v051/SFX_EVENT_COMPARE.txt). Reference music is not mixed (92 vs 108 BPM would clash). Slices are ducked with the speech envelope.",
+    "base": {
+      "file": "../../renders/v04/audio/_full_premaster.wav",
+      "gain": 1.0
+    },
+    "fx": {
+      "file": "audio_ref/05_SFX_TRANSIENTS_ESTIMATE_FIRST10.wav"
+    },
+    "slices": [
+      {
+        "name": "aperture layer (same time as ref)",
+        "src": [
+          0.0,
+          0.6
+        ],
+        "at": 0.0,
+        "gain": 0.22
+      },
+      {
+        "name": "hero 1 layer (same time as ref 'One Thing')",
+        "src": [
+          0.64,
+          1.1
+        ],
+        "at": 0.64,
+        "gain": 0.25
+      },
+      {
+        "name": "ADD: expand to full frame f72",
+        "src": [
+          0.0,
+          0.5
+        ],
+        "at": 2.36,
+        "gain": 0.2
+      },
+      {
+        "name": "card re-entry layer (same time as ref card slide)",
+        "src": [
+          6.45,
+          6.95
+        ],
+        "at": 6.45,
+        "gain": 0.22
+      },
+      {
+        "name": "ADD: workshop card enters f246",
+        "src": [
+          6.45,
+          6.8
+        ],
+        "at": 8.17,
+        "gain": 0.2
+      },
+      {
+        "name": "ADD: cursor failed click f283",
+        "src": [
+          5.15,
+          5.45
+        ],
+        "at": 9.38,
+        "gain": 0.16
+      }
+    ],
+    "_dropped": [
+      "module 01 card f258: reference slice measured +0.1 dB over the mix at its peak (inaudible) — removed"
+    ]
   }
 }

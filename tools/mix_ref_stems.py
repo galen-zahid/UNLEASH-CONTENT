@@ -19,16 +19,22 @@ for a, b in cues['speech']:
     a /= 30; b /= 30
     d = np.maximum(d, np.clip(np.minimum((t - (a - D['attack'])) / D['attack'], 1 - (t - b) / D['release']), 0, 1))
 duck = (1 - D['depth'] * d)[:, None]
-V = cfg[var]; bed = ld(V['bed']['file']) * V['bed']['gain'] * duck
+V = cfg[var]
+if var == 'C':
+    # base = our own premaster (already contains VO, ducked music and our SFX) -> keep VO separate for metrics
+    base = ld(V['base']['file']) * V['base']['gain']
+    bed = base - vo  # our music + our SFX
+else:
+    bed = ld(V['bed']['file']) * V['bed']['gain'] * duck
 fx = np.zeros((N, 2))
-if var == 'B':
+if var in ('B', 'C'):
     src = ld(V['fx']['file'])
     for s in V['slices']:
         a, b = int(s['src'][0] * SR), int(s['src'][1] * SR); seg = src[a:b].copy()
         fi, fo = int(0.008 * SR), int(0.04 * SR)
         seg[:fi] *= np.linspace(0, 1, fi)[:, None]; seg[-fo:] *= np.linspace(1, 0, fo)[:, None]
-        at = int(s['at'] * SR); e = min(N, at + len(seg)); fx[at:e] += seg[:e - at]
-    fx *= V['fx']['gain'] * duck
+        at = int(s['at'] * SR); e = min(N, at + len(seg)); fx[at:e] += seg[:e - at] * s.get('gain', 1.0)
+    fx *= V['fx'].get('gain', 1.0) * duck
 pre = vo + bed + fx
 tmp = f'{out}/_pre_{var}.wav'; sf.write(tmp, pre.astype(np.float32), SR, subtype='FLOAT')
 def ebu(p):

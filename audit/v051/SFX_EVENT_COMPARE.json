@@ -1,0 +1,242 @@
+[
+ {
+  "event": "aperture opens",
+  "frame": 0,
+  "ours": "aperture",
+  "ref": [
+   0.0,
+   0.6
+  ],
+  "rms": -26.0,
+  "centroid": 1696,
+  "low": 0.49,
+  "attack_ms": 180,
+  "dur_ms": 170,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "hero 1 \"Kata siapa?\"",
+  "frame": 25,
+  "ours": "text_reveal_01",
+  "ref": [
+   0.64,
+   1.1
+  ],
+  "rms": -27.1,
+  "centroid": 578,
+  "low": 0.56,
+  "attack_ms": 135,
+  "dur_ms": 185,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "hero 2 \"Bangun bisnis\"",
+  "frame": 55,
+  "ours": "text_reveal_01b",
+  "ref": [
+   2.0,
+   2.3
+  ],
+  "rms": -40.8,
+  "centroid": 506,
+  "low": 0.81,
+  "attack_ms": 175,
+  "dur_ms": 65,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "expand to full frame f72\u201375",
+  "frame": 72,
+  "ours": null,
+  "ref": [
+   2.38,
+   2.7
+  ],
+  "rms": -34.8,
+  "centroid": 1261,
+  "low": 0.57,
+  "attack_ms": 150,
+  "dur_ms": 165,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "box + UANG? letters f78\u2013f92",
+  "frame": 86,
+  "ours": "text_reveal_02",
+  "ref": [
+   2.95,
+   3.35
+  ],
+  "rms": -42.7,
+  "centroid": 1671,
+  "low": 0.23,
+  "attack_ms": 385,
+  "dur_ms": 15,
+  "kind": "hit/pop"
+ },
+ {
+  "event": "pre-wipe + circle wipe",
+  "frame": 99,
+  "ours": "circle_wipe",
+  "ref": [
+   3.45,
+   4.0
+  ],
+  "rms": -31.9,
+  "centroid": 1518,
+  "low": 0.75,
+  "attack_ms": 335,
+  "dur_ms": 75,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "coins fly / stack",
+  "frame": 112,
+  "ours": "coins",
+  "ref": [
+   4.05,
+   4.9
+  ],
+  "rms": -23.7,
+  "centroid": 659,
+  "low": 0.32,
+  "attack_ms": 755,
+  "dur_ms": 85,
+  "kind": "hit/pop"
+ },
+ {
+  "event": "gears start/stall",
+  "frame": 156,
+  "ours": "gears_start_stop",
+  "ref": [
+   5.12,
+   5.55
+  ],
+  "rms": -20.8,
+  "centroid": 485,
+  "low": 0.47,
+  "attack_ms": 150,
+  "dur_ms": 50,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "NOL hit",
+  "frame": 179,
+  "ours": "zero_hit",
+  "ref": [
+   5.62,
+   6.0
+  ],
+  "rms": -32.7,
+  "centroid": 208,
+  "low": 0.78,
+  "attack_ms": 135,
+  "dur_ms": 120,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "card collapse \u2192 re-entry",
+  "frame": 194,
+  "ours": "footage_reentry",
+  "ref": [
+   6.45,
+   6.95
+  ],
+  "rms": -22.1,
+  "centroid": 720,
+  "low": 0.11,
+  "attack_ms": 125,
+  "dur_ms": 80,
+  "kind": "hit/pop"
+ },
+ {
+  "event": "card expand + focus pull f224\u2013232",
+  "frame": 228,
+  "ours": null,
+  "ref": [
+   7.12,
+   7.6
+  ],
+  "rms": -36.1,
+  "centroid": 596,
+  "low": 0.43,
+  "attack_ms": 350,
+  "dur_ms": 115,
+  "kind": "hit/pop"
+ },
+ {
+  "event": "UI/UX hero",
+  "frame": 243,
+  "ours": "text_reveal_02b",
+  "ref": [
+   8.0,
+   8.45
+  ],
+  "rms": -45.2,
+  "centroid": 1238,
+  "low": 0.74,
+  "attack_ms": 350,
+  "dur_ms": 75,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "workshop card enters f246\u2013258",
+  "frame": 247,
+  "ours": null,
+  "ref": [
+   8.05,
+   8.4
+  ],
+  "rms": -44.8,
+  "centroid": 1600,
+  "low": 0.72,
+  "attack_ms": 300,
+  "dur_ms": 60,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "module 01 card floats in f258",
+  "frame": 259,
+  "ours": null,
+  "ref": [
+   8.85,
+   9.15
+  ],
+  "rms": -43.4,
+  "centroid": 1003,
+  "low": 0.67,
+  "attack_ms": 145,
+  "dur_ms": 60,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "cursor failed click f283",
+  "frame": 283,
+  "ours": null,
+  "ref": [
+   5.15,
+   5.45
+  ],
+  "rms": -19.2,
+  "centroid": 495,
+  "low": 0.5,
+  "attack_ms": 120,
+  "dur_ms": 50,
+  "kind": "thump/LF hit"
+ },
+ {
+  "event": "bomb-in / impact f297",
+  "frame": 288,
+  "ours": "bomb_in",
+  "ref": [
+   9.45,
+   10.0
+  ],
+  "rms": -45.4,
+  "centroid": 1069,
+  "low": 0.42,
+  "attack_ms": 195,
+  "dur_ms": 75,
+  "kind": "hit/pop"
+ }
+]
