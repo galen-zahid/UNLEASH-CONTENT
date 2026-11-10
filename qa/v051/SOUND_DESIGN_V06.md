@@ -37,7 +37,7 @@ Video ternyata jatuh pas di grid **137.8 BPM (nuansa half-time, karakter mirip r
 ## Mix (setelah master)
 - Margin suara talent di pita bicara: hook +9.1, Panel 04 +7.8, E +7.3, F +3.9 dB (F = impact bomb + awal kata "Siapa").
 - Ducking per pita: mid (pluck/pad) turun paling dalam saat talent bicara; low (kick/808) dan air (hat) hanya sedikit, supaya groove tetap terasa.
-- Musik: jeda −22.4 dBFS, saat bicara −19.8 dBFS broadband (didominasi bas). Groove di pita hat terdeteksi 137.9 BPM.
+- Musik (pass 4, permintaan pengguna: +3 dB): jeda −20.3 dBFS, saat bicara −17.7 dBFS broadband (didominasi bas). Margin suara talent di pita bicara setelah +3 dB: +8.9 / +7.5 / +7.1 / +3.0 dB. Groove di pita hat terdeteksi 137.9 BPM.
 - Setiap SFX terdengar di puncaknya: median +7.9 (tipografi) sampai +36 dB (opening).
 - Master −15.9 LUFS / −2.1 dBTP (linear). Mix Remotion = mirror numpy (r 0.99999).
 - Analisis menunjukkan yang menutup suara talent di pass awal adalah **SFX** (swish tipografi, koin, transisi), bukan musik. Gain SFX per kelompok sudah diturunkan.
