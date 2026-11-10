@@ -1,0 +1,196 @@
+{
+  "source": "D:/download/snapgram.io_larg8ak17f8d.mp4",
+  "method_vo": "UVR-MDX-NET-Inst_HQ_3.onnx via audio-separator; denoise enabled",
+  "method_music_sfx": "repetition-based spectral masking; approximate, NOT semantic ground truth",
+  "same_start": true,
+  "time_origin_s": 0,
+  "files": [
+    {
+      "file": "01_FULL_MIX.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1096766,
+      "duration_s": 22.849291666666666,
+      "peak_dbfs": 0.0,
+      "rms_dbfs": -17.205523537564027,
+      "sha256": "2f30c6231017b6df764999cd8a1a8d4d37f0dd370004ab994a32924336c298ae"
+    },
+    {
+      "file": "01_FULL_MIX_FIRST10.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 480000,
+      "duration_s": 10.0,
+      "peak_dbfs": -0.1539235829701376,
+      "rms_dbfs": -17.14750752403322,
+      "sha256": "2dcda8a3e51dfd4a3bc3ab9a62b6e1d973df75902d49d202f4c0399df5b571e5"
+    },
+    {
+      "file": "02_VO_VOCALS_ESTIMATE.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1096766,
+      "duration_s": 22.849291666666666,
+      "peak_dbfs": -1.1809674494364821,
+      "rms_dbfs": -18.514096971888026,
+      "sha256": "f5649b20d77634caa6664f14ea8096f963e8e37f0cd9960fad545f5de63dd94f"
+    },
+    {
+      "file": "02_VO_VOCALS_ESTIMATE_FIRST10.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 480000,
+      "duration_s": 10.0,
+      "peak_dbfs": -1.1809674494364821,
+      "rms_dbfs": -18.361418221567103,
+      "sha256": "cfa49994c5530ea1f383775d009b4226336b8c75017e73bd5b665f9817864acf"
+    },
+    {
+      "file": "03_NO_VO_MUSIC_PLUS_SFX.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1096766,
+      "duration_s": 22.849291666666666,
+      "peak_dbfs": -0.13040701046686276,
+      "rms_dbfs": -23.774180094246475,
+      "sha256": "b6930b97a34fcb9c8b51880027a662c871167aacf7936cb831a239e224a69fa2"
+    },
+    {
+      "file": "03_NO_VO_MUSIC_PLUS_SFX_FIRST10.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 480000,
+      "duration_s": 10.0,
+      "peak_dbfs": -0.788157919501613,
+      "rms_dbfs": -24.27032127324066,
+      "sha256": "8ce05b4e1be05f63bfc17fa02ec8d5c52b1a92a970cf40e00a3977b1f6236503"
+    },
+    {
+      "file": "04_BACKSOUND_MUSIC_ESTIMATE.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1096766,
+      "duration_s": 22.849291666666666,
+      "peak_dbfs": -7.217996902329257,
+      "rms_dbfs": -28.910142792063272,
+      "sha256": "9e6455768acc392aa708ddeaa7f1d8c355bb3d9d9c6b38fe9e865b46795b73c1"
+    },
+    {
+      "file": "04_BACKSOUND_MUSIC_ESTIMATE_FIRST10.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 480000,
+      "duration_s": 10.0,
+      "peak_dbfs": -9.05112766751827,
+      "rms_dbfs": -29.66244362458346,
+      "sha256": "e04561050aeaa649ea5337ad641c1b024e02539ff273b0d4e1809726d06c717c"
+    },
+    {
+      "file": "05_SFX_TRANSIENTS_ESTIMATE.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1096766,
+      "duration_s": 22.849291666666666,
+      "peak_dbfs": -1.5147073128667297,
+      "rms_dbfs": -26.92608762295969,
+      "sha256": "90d186b9c88954b2b9a818667c5cd585fcaeca833d621ea5f85f75b7d3b3765f"
+    },
+    {
+      "file": "05_SFX_TRANSIENTS_ESTIMATE_FIRST10.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 480000,
+      "duration_s": 10.0,
+      "peak_dbfs": -1.5147073128667297,
+      "rms_dbfs": -27.392074853215135,
+      "sha256": "fbf191461c89bbb2227a4e28330e2191ac50cf8addc510c853f84453eed673fd"
+    }
+  ],
+  "sfx_candidates": [
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_01_at_000.18s.wav",
+      "source_start_s": 0.06,
+      "source_peak_s": 0.18,
+      "source_end_s": 0.83,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_02_at_000.76s.wav",
+      "source_start_s": 0.64,
+      "source_peak_s": 0.76,
+      "source_end_s": 1.41,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_03_at_004.22s.wav",
+      "source_start_s": 4.1,
+      "source_peak_s": 4.22,
+      "source_end_s": 4.87,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_04_at_005.26s.wav",
+      "source_start_s": 5.14,
+      "source_peak_s": 5.26,
+      "source_end_s": 5.91,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_05_at_006.68s.wav",
+      "source_start_s": 6.56,
+      "source_peak_s": 6.68,
+      "source_end_s": 7.33,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_06_at_014.44s.wav",
+      "source_start_s": 14.32,
+      "source_peak_s": 14.44,
+      "source_end_s": 15.09,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_07_at_016.42s.wav",
+      "source_start_s": 16.3,
+      "source_peak_s": 16.42,
+      "source_end_s": 17.07,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_08_at_017.68s.wav",
+      "source_start_s": 17.56,
+      "source_peak_s": 17.68,
+      "source_end_s": 18.33,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_09_at_018.46s.wav",
+      "source_start_s": 18.34,
+      "source_peak_s": 18.46,
+      "source_end_s": 19.11,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_10_at_019.14s.wav",
+      "source_start_s": 19.02,
+      "source_peak_s": 19.14,
+      "source_end_s": 19.79,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_11_at_020.94s.wav",
+      "source_start_s": 20.82,
+      "source_peak_s": 20.94,
+      "source_end_s": 21.59,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    },
+    {
+      "file": "SFX_CANDIDATE_CUTS/SFX_CANDIDATE_12_at_021.60s.wav",
+      "source_start_s": 21.48,
+      "source_peak_s": 21.6,
+      "source_end_s": 22.25,
+      "status": "estimated transient; may contain drums/music/VO bleed; audition before using"
+    }
+  ],
+  "reconstruction_residual_rms_dbfs": -240.0
+}

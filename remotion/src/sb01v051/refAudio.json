@@ -1,0 +1,113 @@
+{
+  "_doc": "SB01 V05.1 audio using the user-supplied LARG reference stems (separation estimates, see remotion/public/audio_ref/README_CLAUDE.md). Two variants. Times in seconds (output timeline = master timeline). Gains linear. Edit and re-run tools/mix_ref_stems.py.",
+  "vo": {
+    "file": "audio_v04/vo_clean.wav",
+    "gain": 1.0
+  },
+  "duck": {
+    "windows_from": "cues.json speech",
+    "depth": 0.55,
+    "attack": 0.1,
+    "release": 0.25
+  },
+  "A": {
+    "_doc": "03 (music+SFX, no reference vocals) played continuously from 0 s, untouched timing",
+    "bed": {
+      "file": "audio_ref/03_NO_VO_MUSIC_PLUS_SFX_FIRST10.wav",
+      "gain": 0.25
+    }
+  },
+  "B": {
+    "_doc": "04 (music) continuous from 0 s + 05 (transients) cut into event slices moved to our visual frames. src = slice in the reference (s), at = where it starts in our video (s). Slices fade 8 ms in / 40 ms out.",
+    "bed": {
+      "file": "audio_ref/04_BACKSOUND_MUSIC_ESTIMATE_FIRST10.wav",
+      "gain": 0.3
+    },
+    "fx": {
+      "file": "audio_ref/05_SFX_TRANSIENTS_ESTIMATE_FIRST10.wav",
+      "gain": 0.34
+    },
+    "slices": [
+      {
+        "name": "opening (aperture, One Thing/Kata, LOOking/Bangun, expand, box/UANG) — same timing as ref",
+        "src": [
+          0.0,
+          3.35
+        ],
+        "at": 0.0
+      },
+      {
+        "name": "ref pre-wipe blur + circle wipe f112–f119 → our f97–f106 (−0.45 s)",
+        "src": [
+          3.38,
+          4.02
+        ],
+        "at": 2.93
+      },
+      {
+        "name": "ref icon spin-in 4.16/4.39 → our coin flight/landings f104–f124",
+        "src": [
+          4.05,
+          4.7
+        ],
+        "at": 3.5
+      },
+      {
+        "name": "ref icon settle 4.78 → our coin stack f136",
+        "src": [
+          4.7,
+          5.05
+        ],
+        "at": 4.45
+      },
+      {
+        "name": "ref cursor click 5.25 → our gear start f156 (5.2 s)",
+        "src": [
+          5.12,
+          5.55
+        ],
+        "at": 5.07
+      },
+      {
+        "name": "ref emoji pop 5.73 → our NOL hit f179 (5.97 s)",
+        "src": [
+          5.62,
+          6.0
+        ],
+        "at": 5.86
+      },
+      {
+        "name": "ref card slide-up 6.56/6.77 → our card re-entry f194–f206",
+        "src": [
+          6.45,
+          6.95
+        ],
+        "at": 6.4
+      },
+      {
+        "name": "ref Explain/focus pull 7.23/7.43 → our card expand + focus pull f224–f232",
+        "src": [
+          7.12,
+          7.6
+        ],
+        "at": 7.47
+      },
+      {
+        "name": "ref Busier 8.32 → our UI/UX f243 (8.1 s)",
+        "src": [
+          8.2,
+          8.6
+        ],
+        "at": 7.98
+      },
+      {
+        "name": "ref hard cut 9.62 → our bomb-in impact f297 (9.9 s)",
+        "src": [
+          9.5,
+          10.0
+        ],
+        "at": 9.78
+      }
+    ]
+  }
+}
