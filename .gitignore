@@ -10,3 +10,4 @@ renders/v03/*.log
 renders/v04/_raw_*.mp4
 renders/v04/audio/_full_*.wav
 remotion/public/audio_v04/
+renders/v05/_raw_*.mp4

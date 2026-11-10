@@ -1,0 +1,109 @@
+{
+  "_doc": "SB01 v03 single source of truth. Output frame @30fps == master frame (master starts at 0.000 s; lip-sync verified in audit/v03/LIPSYNC_bilabials.png). Word onsets: ASR word timestamps refined with 10 ms envelope (audit/v03/AUDIO_QC_v03.md).",
+  "fps": 30,
+  "frames": 300,
+  "masterCut": 107,
+  "words": {
+    "Kata": 22,
+    "siapa": 36,
+    "bangun": 53,
+    "bisnis": 61,
+    "cuma": 70,
+    "butuh": 78,
+    "uang": 87,
+    "Percuma": 116,
+    "modal": 127,
+    "gede": 136,
+    "kalau1": 146,
+    "skill": 154,
+    "eksekusinya": 163,
+    "nol": 179,
+    "nolEnd": 187,
+    "dan": 187,
+    "percuma2": 200,
+    "produk": 212,
+    "bagus": 220,
+    "kalau2": 231,
+    "personal": 243,
+    "branding": 256,
+    "tail": 263,
+    "tailEnd": 284,
+    "Siapa": 295
+  },
+  "speech": [
+    [
+      22,
+      97
+    ],
+    [
+      116,
+      188
+    ],
+    [
+      188,
+      285
+    ],
+    [
+      294,
+      300
+    ]
+  ],
+  "beats": {
+    "A": [
+      0,
+      23
+    ],
+    "B": [
+      24,
+      104
+    ],
+    "C": [
+      105,
+      116
+    ],
+    "D": [
+      117,
+      197
+    ],
+    "E": [
+      198,
+      287
+    ],
+    "F": [
+      288,
+      299
+    ]
+  },
+  "coinLand": [
+    118,
+    121,
+    124,
+    127,
+    130,
+    133,
+    136,
+    139
+  ],
+  "gears": {
+    "start": 156,
+    "peak": 162,
+    "stop": 174,
+    "wobbleEnd": 178
+  },
+  "sfx": {
+    "aperture": 0,
+    "text_reveal_01": 53,
+    "text_reveal_02": 87,
+    "circle_wipe": 99,
+    "coins": 112,
+    "gears_start_stop": 156,
+    "zero_hit": 179,
+    "footage_reentry": 194,
+    "bomb_in": 288
+  },
+  "bombImpact": 293,
+  "wipeF": [
+    291,
+    299
+  ]
+}
