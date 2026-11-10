@@ -14,7 +14,7 @@ const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 
 // ======================= TRAINING MODULE (P02 closed → P03 open → task → completed) =======================
 export const MODULE = {w: 270, h: 330, r: 26};
-export const TrainingModule: React.FC<{open: number; task: number; check: number}> = ({open, task, check}) => {
+export const TrainingModule: React.FC<{open: number; task: number; check: number; label?: string; title?: [string, string]}> = ({open, task, check, label = 'MODUL 01', title = ['Upgrading', 'Skill']}) => {
   const cover = open * -168; // hinge on the left edge
   return (
     <div style={{position: 'relative', width: MODULE.w, height: MODULE.h}}>
@@ -27,7 +27,7 @@ export const TrainingModule: React.FC<{open: number; task: number; check: number
       <Card25D w={MODULE.w} h={MODULE.h} r={MODULE.r} rx={4} ry={-8} depth={9}>
         {/* inner page (visible once the cover opens) */}
         <div style={{position: 'absolute', inset: 14, borderRadius: 18, background: '#F3F7F8'}}>
-          <div style={{position: 'absolute', left: 22, top: 24, fontFamily: FONT_SANS, fontWeight: 700, fontSize: 17, letterSpacing: 3, color: C.teal}}>MODUL 01</div>
+          <div style={{position: 'absolute', left: 22, top: 24, fontFamily: FONT_SANS, fontWeight: 700, fontSize: 17, letterSpacing: 3, color: C.teal}}>{label}</div>
           {[0, 1, 2].map((i) => (
             <div key={i} style={{position: 'absolute', left: 22, top: 66 + i * 30, width: [190, 160, 176][i], height: 12, borderRadius: 6, background: SKEL}} />
           ))}
@@ -46,14 +46,14 @@ export const TrainingModule: React.FC<{open: number; task: number; check: number
           }}
         >
           <div style={{position: 'absolute', right: -50, bottom: -60, width: 190, height: 170, borderRadius: '48% 52% 40% 60%', background: `linear-gradient(160deg, ${C.orange2}, ${C.orange1})`, opacity: 0.9}} />
-          <div style={{position: 'absolute', left: 22, top: 24, fontFamily: FONT_SANS, fontWeight: 700, fontSize: 17, letterSpacing: 3, color: GOLD}}>MODUL 01</div>
+          <div style={{position: 'absolute', left: 22, top: 24, fontFamily: FONT_SANS, fontWeight: 700, fontSize: 17, letterSpacing: 3, color: GOLD}}>{label}</div>
           <div style={{position: 'absolute', left: 20, top: 66, transform: 'scale(1.15)', transformOrigin: '0 0'}}>
             <BookIcon />
           </div>
           <div style={{position: 'absolute', left: 22, top: 168, fontFamily: FONT_SERIF, fontStyle: 'italic', fontWeight: 700, fontSize: 38, lineHeight: 1.0, color: WHITE}}>
-            Upgrading
+            {title[0]}
             <br />
-            Skill
+            {title[1]}
           </div>
         </div>
       </Card25D>

@@ -7,7 +7,7 @@ import sd from './sound_sb02.json';
 
 const V6 = (n: string) => staticFile(`audio_v06/${n}.wav`);
 const S2 = (n: string) => staticFile(`audio_sb02/${n}.wav`);
-export const GROUP_GAIN: Record<string, number> = {vo: 1, music: 1, text: 1, card: 1, ui: 1, transition: 1};
+export const GROUP_GAIN: Record<string, number> = {vo: sd.voGain, music: 1, text: 1, card: 1, ui: 1, transition: 1};
 // speech windows (local frames, measured word onsets/offsets; f271–299 muted so the music opens up there)
 export const SPEECH: [number, number][] = [[-3, 26], [88, 188], [200, 270]];
 const K = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;

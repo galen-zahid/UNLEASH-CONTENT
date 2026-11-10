@@ -1,12 +1,21 @@
-# SB02_QA_REPORT — SB02 V01 (global 10–20 s)
+# SB02_QA_REPORT — SB02 V01.1 (global 10–20 s)
 
 Status: **render teknis selesai, belum disetujui pengguna.** Validasi teknis bukan persetujuan. SB03 belum dimulai.
+
+## V01.1 — perubahan dari review pengguna atas V01
+| Feedback | Perbaikan |
+|---|---|
+| Subtitle dan ilustrasi tidak nyambung | Subtitle sekarang = kata yang diucapkan (per kata, di onset ASR). Ilustrasi menggambarkan kalimat itu sendiri: "?" (percaya), kartu 01/02 (dua hal), fondasi + gedung (bangun bisnis), kilau (kabar baik), buku terbuka + ide (mendapatkan ilmu), kartu workshop (VO pengganti "UI/UX workshop"). Tidak ada ilustrasi yang mendahului ucapan; jeda jalan f61–88 dibiarkan bersih. Dihapus: headline UPGRADING SKILL/×, modul tergantung di jeda bicara, sekuens redesign panjang di P04 (tidak sesuai ucapan "kabar baiknya…ilmu") |
+| Suara talent kurang keras | VO +4 dB terhadap musik dan SFX (`voGain` 1.585), juga pada paruh SB01 di versi join supaya tidak ada lompatan level. VO−musik speech-band naik dari ≈+10 ke ≈+14 dB; VO−SFX +7 sampai +12 dB |
+| Tidak ada tracking kamera / zoom per subtitle | Kamera mengunci wajah talent (face track dihaluskan) di titik tetap, dan punch-in 5 f di setiap subtitle kunci: PERCAYA?, DUA HAL, BISNIS, Kabar baiknya, ILMU. Pull-back saat ilustrasi butuh ruang bawah |
+
+Catatan: angka di bawah sudah diperbarui untuk V01.1. Bagian deviasi poin 2–3 (UPGRADING SKILL / ×) tidak berlaku lagi.
 
 ## Deliverable
 | File | Isi |
 |---|---|
-| `renders/sb02/SB02_V01_FULL.mp4` | 300 f, 1080×1920, 30 fps CFR, yuv420p tv BT.709, AAC 256k, −15.7 LUFS / −2.1 dBTP (paruh kedua master gabungan) |
-| `renders/sb02/SB01_SB02_JOIN_20S.mp4` | SB01 V05.1 (gambar) + SB02, 600 f, satu master audio 20 s: −16.1 LUFS / −2.1 dBTP |
+| `renders/sb02/SB02_V01_FULL.mp4` | (V01.1) 300 f, 1080×1920, 30 fps CFR, yuv420p tv BT.709, AAC 256k, −15.8 LUFS / −2.8 dBTP (paruh kedua master gabungan) |
+| `renders/sb02/SB01_SB02_JOIN_20S.mp4` | SB01 V05.1 (gambar) + SB02, 600 f, satu master audio 20 s: −16.1 LUFS / −1.5 dBTP |
 | `renders/sb02/SB02_REFERENCE_COMPARISON.mp4` | 7 pasang gerak, referensi \| SB02 (7.5 s) |
 | `renders/sb02/SB02_CONTACT_SHEET.png` | Setiap 6 frame, f0–f294 |
 | `renders/sb02/SB02_MUSIC_ONLY.wav`, `SB02_FULL_MIX.wav`, `SB01_SB02_JOIN_20S_MIX.wav` | 48 kHz / 24-bit |

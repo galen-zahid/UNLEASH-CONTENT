@@ -2,14 +2,14 @@
 python -I tools/make_sb02_ref_comparison.py <tmpdir>"""
 import subprocess, sys
 T = sys.argv[1]; R = '_src_untracked/'; B = 'renders/sb02/SB02_V01_FULL.mp4'
-PAIRS = [  # ref, ref start s, dur s, SB02 start frame, label
+PAIRS = [  # ref, ref start s, dur s, SB02 start frame, label  (V01.1)
     ('jxdzwc9awa6j', 17.9, 0.8, 52, '1 jx 3-frame blur cut (18.13-18.27 s) -> SB02 cut f61'),
-    ('0uqzshinqvol', 12.6, 0.8, 60, '2 0u badge drop + damped swing (12.7 s) -> training module f63-82'),
-    ('9gightyfqu5k', 6.1, 0.8, 66, '3 9g dark card rise ~12 f (6.2 s) -> low-fi fragment f70-82'),
-    ('jxdzwc9awa6j', 0.4, 0.8, 86, '4 jx word rise 6 f + stack (0.47 s) -> Nah, makanya / kalian butuh'),
-    ('9gightyfqu5k', 5.2, 0.8, 130, '5 9g exit blur-up + serif blur-in (5.33/5.67 s) -> DUA HAL out, UPGRADING SKILL in'),
-    ('jxdzwc9awa6j', 18.1, 0.8, 176, '6 jx serif slide-in from left (18.27 s) -> UI/UX WORKSHOP f180'),
-    ('0uqzshinqvol', 12.6, 2.6, 186, '7 0u semantic vector illustration -> P04 redesign f186-263'),
+    ('jxdzwc9awa6j', 0.4, 0.8, 86, '2 jx word rise 6 f + stack (0.47 s) -> Nah, makanya / kalian butuh'),
+    ('0uqzshinqvol', 12.6, 0.8, 128, '3 0u badge drop + damped swing (12.7 s) -> cards 01/02 drop on "dua hal"'),
+    ('0uqzshinqvol', 12.6, 1.6, 144, '4 0u semantic vector build -> foundation + building on "bangun bisnis"'),
+    ('9gightyfqu5k', 5.2, 0.8, 184, '5 9g exit blur-up + serif blur-in (5.33/5.67 s) -> BANGUN BISNIS out, Kabar baiknya in'),
+    ('9gightyfqu5k', 6.1, 0.8, 216, '6 9g dark card rise ~12 f (6.2 s) -> book rises on "kalian bisa"'),
+    ('jxdzwc9awa6j', 18.1, 0.8, 250, '7 jx punch/pull camera on key word -> face-tracked punch-in on ILMU f257'),
 ]
 parts = []
 for i, (ref, rs, d, sf, lab) in enumerate(PAIRS):

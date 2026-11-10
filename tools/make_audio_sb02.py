@@ -152,28 +152,28 @@ sheet = {
   "_doc": "SB02 sound cue sheet. Local time (s) = global − 10.0. Groups = delivery stems. Music: v06b bands from global 10.0 s (trimBefore 300 f), same gains/duck as SB01.",
   "bpm": BPM, "beatPhase": PHASE, "voMute": [M0, M1],
   "music": json.load(open('remotion/src/sb01v051/sound_v06.json'))['music'],
+  "voGain": 1.585,  # V01.1 user review "suara talent kerasin": VO +4 dB against music and SFX
   "place": [
-    # P01 — curtain lift out of the SB01 bomb-in, question words, two gold paths
+    # V01.1 — every SFX sits on the illustration event it belongs to (illustrations are locked to the speech)
+    # P01 "Siapa yang mau PERCAYA?" + gold "?"
     ["transition", "curtain_lift", f2s(0), 0.55],
-    ["text", "type_small", f2s(1), 0.6], ["text", "type_hero", f2s(8), 0.75],
-    ["card", "assemble_1", f2s(34), 0.45], ["card", "assemble_2", f2s(44), 0.45],
+    ["text", "type_small", f2s(1), 0.6], ["text", "type_hero", f2s(8), 0.75], ["ui", "check_ding", f2s(12), 0.3],
     # cut f61: 3-frame blur cut on the beat (beat 20 = f62.3)
     ["transition", "blur_cut", f2s(59), 0.8],
-    # P02 — module drops from the top edge, low-fi fragment rises, kinetic words, DUA HAL
-    ["card", "module_drop", f2s(66), 0.75], ["card", "card_rise", f2s(70), 0.6],
+    # P02 "Nah, makanya kalian butuh DUA HAL" — two numbered cards drop on "dua hal"
     ["text", "type_small", f2s(88), 0.65], ["text", "type_small", f2s(100), 0.55], ["text", "type_small", f2s(112), 0.55], ["text", "type_small", f2s(123), 0.55],
-    ["text", "type_hero_big", f2s(130), 0.85],
-    # P03 — UPGRADING SKILL: module open → task card → completed
-    ["text", "type_hero", f2s(141), 0.7], ["card", "module_open", f2s(150), 0.8], ["ui", "task_slide", f2s(158), 0.7], ["ui", "check_ding", f2s(168), 0.75],
-    # P04 — UI/UX WORKSHOP redesign on the beat grid (f180 / 193 / 206 / 219 / 232 / 245)
-    ["text", "type_hero", f2s(180), 0.75], ["card", "card_rise", f2s(176), 0.5], ["ui", "ui_tap", f2s(188), 0.5],
-    ["card", "pull_apart", f2s(193), 0.5], ["text", "type_small", f2s(200), 0.5],
-    ["ui", "wire_tick", f2s(198), 0.6], ["ui", "wire_tick", f2s(201), 0.5], ["ui", "wire_tick", f2s(204), 0.5], ["ui", "wire_tick", f2s(207), 0.45],
-    ["card", "assemble_1", f2s(210), 0.6], ["card", "assemble_2", f2s(214), 0.6], ["card", "assemble_3", f2s(217), 0.6], ["card", "assemble_snap", f2s(219), 0.7],
-    ["ui", "cta_glow", f2s(226), 0.45],
-    ["ui", "click_success", f2s(245), 0.85],
-    # P05 — UPGRADING SKILL × UI/UX WORKSHOP, gold connector (beat 36 = f271.3)
-    ["text", "type_combine", f2s(266), 0.8], ["transition", "connector_shimmer", f2s(268), 0.7],
+    ["text", "type_hero_big", f2s(130), 0.85], ["card", "module_drop", f2s(131), 0.7],
+    # P03 "itu buat BANGUN BISNIS kalian." — cards slide into the foundation, floors stack, roof + flag, lights
+    ["card", "task_slide", f2s(146), 0.6], ["card", "assemble_1", f2s(156), 0.6], ["card", "assemble_2", f2s(160), 0.6], ["card", "assemble_3", f2s(164), 0.6],
+    ["text", "type_hero", f2s(158), 0.6], ["card", "assemble_snap", f2s(168), 0.7], ["text", "type_hero", f2s(167), 0.6], ["ui", "wire_tick", f2s(177), 0.6], ["ui", "wire_tick", f2s(180), 0.5],
+    ["transition", "exit_swell", f2s(185), 0.35],
+    # P04a "Kabar baiknya," — sparkle burst
+    ["text", "type_hero", f2s(199), 0.7], ["ui", "check_ding", f2s(201), 0.7], ["transition", "connector_shimmer", f2s(200), 0.5],
+    # P04b "kalian bisa mendapatkan ILMU" — book rises, opens, idea + icons flow out
+    ["card", "card_rise", f2s(219), 0.6], ["text", "type_small", f2s(220), 0.5], ["text", "type_small", f2s(229), 0.45], ["text", "type_small", f2s(238), 0.45],
+    ["card", "module_open", f2s(238), 0.8], ["ui", "cta_glow", f2s(243), 0.6], ["transition", "connector_shimmer", f2s(248), 0.5], ["text", "type_hero_big", f2s(255), 0.7],
+    # P05 [VO pending "UI/UX workshop"] — workshop card rises, CTA clicked (beat 36 = f271.3)
+    ["card", "card_rise", f2s(266), 0.6], ["text", "type_hero_big", f2s(270), 0.8], ["ui", "click_success", f2s(283), 0.85],
     # P06 — exit toward SB03
     ["transition", "exit_swell", f2s(285), 0.6], ["transition", "exit_whoosh", f2s(292), 0.75],
   ],

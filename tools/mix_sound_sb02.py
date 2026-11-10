@@ -32,7 +32,7 @@ G = ['vo', 'music', 'text', 'card', 'ui', 'transition']
 MAP1 = {'vo': 'vo', 'music': 'music', 'opening': 'transition', 'typographic': 'text', 'coin': 'card', 'gear': 'card', 'transition': 'transition', 'ui': 'ui', 'bomb': 'transition'}
 st = {k: np.zeros((N, 2)) for k in G}
 # ---- SB01 (exactly the v06b mix, truncated at 10.0 s like the SB01 render)
-v = rd(A6 + 'vo_clean.wav'); st['vo'][:H] += v[:H]
+v = rd(A6 + 'vo_clean.wav'); st['vo'][:H] += v[:H] * s2.get('voGain', 1.0)  # join: same VO lift on the SB01 half so the voice level does not step at 10 s
 sp1 = speech(c1['speech'], H)
 for b in s1['music']['bands']:
     m = rd(A6 + b + '.wav'); g = s1['music']['gain'][b] * (1 - (1 - s1['music']['duck'][b]) * sp1)
@@ -42,7 +42,7 @@ for grp, name, t, gain in s1['place']:
     st[MAP1[grp]][:H] += b1[:H]
     if name == 'bomb_impact': st['transition'][H:] += b1[H:]  # tail continues into SB02 (AudioMixSB02 trimBefore 12)
 # ---- SB02
-v = rd(A2 + 'vo_clean_sb02.wav'); st['vo'][H:] += v[:H]
+v = rd(A2 + 'vo_clean_sb02.wav'); st['vo'][H:] += v[:H] * s2.get('voGain', 1.0)
 sp2 = speech(SPEECH2, H)
 for b in s2['music']['bands']:
     m = rd(A6 + b + '.wav'); g = s2['music']['gain'][b] * (1 - (1 - s2['music']['duck'][b]) * sp2)
@@ -58,7 +58,7 @@ def ebu(p, extra=[]):
     s = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', *extra, '-i', p, '-af', 'ebur128=peak=true', '-f', 'null', '-'], capture_output=True, text=True).stderr
     return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', s)[-1]), float(re.findall(r'Peak:\s+(-?[\d.]+) dBFS', s)[-1])
 tmp = f'{out}/_pre20.wav'; sf.write(tmp, full.astype(np.float32), SR, subtype='FLOAT'); I0, TP0 = ebu(tmp)
-ceil = 10 ** ((-1.5 - (-16 - I0) - 0.8) / 20); lim = f'{out}/_lim20.wav'
+ceil = 10 ** ((-1.5 - (-16 - I0) - 1.6) / 20); lim = f'{out}/_lim20.wav'  # extra 0.8 dB margin: AAC added ≈1.2 dB TP on the join
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tmp, '-af', f'aresample=192000,alimiter=limit={ceil:.5f}:attack=4:release=60:level=false:latency=true,aresample=48000', '-c:a', 'pcm_f32le', lim], check=True)
 p1 = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', lim, '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'], capture_output=True, text=True).stderr
 j1 = json.loads(p1[p1.rindex('{'):p1.rindex('}') + 1])

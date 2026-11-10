@@ -1,4 +1,4 @@
-# SB02_FRAME_MAP — SB02 V01 (global 10.0–20.0 s)
+# SB02_FRAME_MAP — SB02 V01.1 (global 10.0–20.0 s)
 
 Komposisi `SB02-v01` (`remotion/src/sb02/`), 300 f @ 30 fps, 1080×1920.
 - **Frame lokal:** f = master `IMG_6757.MOV` pada 10.0 s + f/30. Proxy: `remotion/public/master/IMG_6757_10-20.5_v03_graded_cfr30.mp4`, dengan grade yang sama seperti SB01 (`audit/v03/GRADE_DENOISE_FILTER.txt`).
@@ -19,16 +19,25 @@ Komposisi `SB02-v01` (`remotion/src/sb02/`), 300 f @ 30 fps, 1080×1920.
 | **"personal branding"** | **f271–f299** (19.05–20.00 s) → **di-mute**, `VO_REPLACEMENT_PENDING` |
 | "sekaligus upgrading skill" | f299+ (masuk SB03) |
 
-## Panel (dikunci ke dialog; ada deviasi dari timing brief, lihat QA)
-| Panel | Frame | Visual | Grid musik (137.8 BPM) |
-|---|---|---|---|
-| P01 | f0–f60 | f0–f16: layer bomb-in SB01 (WorkshopFragmentScene di global f300+, motion blur 24 sampel) membesar lalu terangkat ke atas seperti tirai. Footage Shot B push 1.10→1.0 (f0–22). "Siapa / yang / mau" f1/3/5, hero "PERCAYA?" f8 (mask + overshoot). Dua jalur emas f28–50 berakhir di ikon buku dan kursor (f44/f48). Exit dissolve + blur ke atas f53–60 | beat 16 = f10 |
-| cut | f58–f64 | Blur cut 3-frame (puncak 16 px di f61), grafik ikut blur 60 % | beat 20 = f62.3 |
-| P02 | f61–f140 | Kamera pull-back 1.21→1.15 (f61–69). Training module jatuh dari tepi atas dengan tali emas (f63–72) dan berayun teredam sampai ±f82. Fragmen low-fi naik dari tepi bawah ke kanan-bawah (f70–82, blur/skala). "Nah, makanya" f88/f100, "kalian butuh" f112/f123, "DUA HAL" f131 (pop). Dua goresan emas ke kedua objek f133–143 | "Nah" = beat 22 (f88.5) |
-| P03 | f140–f178 | "DUA HAL" keluar (blur ke atas, f139–146). Index 01 + "UPGRADING SKILL" (putih) masuk geser dari kiri f141–150. "buat bangun bisnis" per kata f152/158/167. Modul lepas dari tali, turun ke kiri-bawah dan membesar (f142–154). Kamera push 1.15→1.22. Modul terbuka f150–158 → task card f158–167 → cincin check f167–176 ("Selesai") | f140.6 / f153.7 / f166.8 |
-| P04 | f178–f262 | Index 02 + "UI/UX WORKSHOP" (oranye) masuk geser dari kanan f180–189. Fragmen low-fi tumbuh menjadi kartu workshop (f178–190). Redesign: **poor** + tanda kritik f186–193 → **pull apart** f193–201 → **guides/wireframe** f196–208 → **reassemble** f207–219 → **hierarchy/CTA** f219–230 → kursor f232–244, **klik** f245 + ripple → **prototype** (layar 2 meluncur) f248–258, kartu pendukung "03 — Interactive Prototype" f250. "Kabar baiknya," f200, "kalian bisa mendapatkan ilmu" per kata f220–257 | f180 / 193 / 206 / 219 / 232 / 245 / 258 |
-| P05 | f262–f290 | Kartu menyusut ke node kanan, modul ke node kiri (f262–272). "UPGRADING SKILL" f266, "×" emas f270, "UI/UX WORKSHOP" f268. Konektor emas f268–280 (wilayah VO yang di-mute) | beat 36 = f271.3 |
-| P06 | f286–f299 | Semua mengerucut ke titik emas (kanan, y 1450). Panel teal miring dengan tepi emas menyapu dari kiri, berakselerasi dan masih bergerak di f299 (≈ 60 % layar). Tidak ada reveal UNLEASH dan tidak ada CTA | beat 38 = f297.4 |
+## Panel V01.1 — subtitle dan ilustrasi = kalimat yang sedang diucapkan
+V01.1 menggantikan V01 setelah review pengguna: "ga nyambung antara subtitle dengan ilustrasi; suara talent kerasin; tracking kamera, zoom-in per subtitle".
+
+| Frame | Talent bilang | Subtitle | Ilustrasi | Kamera (face-track + zoom) |
+|---|---|---|---|---|
+| f0–16 | (akhir "kalau UI/UX…" SB01) | — | Layer bomb-in SB01 dilanjutkan di global f300, terangkat seperti tirai | — |
+| f1–60 | "Siapa yang mau percaya?" | "Siapa yang mau" (per kata f1/3/5), **PERCAYA?** f8 | Tanda **"?" emas** + cincin putus-putus di samping wajah (f12) | Zoom 1.50→1.42 (settle), push 1.44→1.50 |
+| f58–64 | — | — | Blur cut 3 f menutup cut asli f61 | Pull-back 1.30→1.18 |
+| f61–88 | (jalan, tanpa ucapan) | — | Frame bersih, hanya talent | Wajah dikunci di (540, 860) |
+| f88–145 | "Nah, makanya kalian butuh dua hal" | per kata f88/100/112/123, **DUA HAL** f131 | **Dua kartu kosong 01 / 02** jatuh dari tepi atas pada "dua hal" (f131/134, ayunan teredam) | Drift 1.18→1.24, **punch-in 1.25→1.34** f132–137 |
+| f145–188 | "itu buat bangun bisnis kalian." | "itu buat" f145/152, **BANGUN** f158 (putih), **BISNIS** f167 (oranye), "kalian." f176 | Kartu 01/02 turun menjadi **fondasi**. Tiga lantai gedung bertumpuk (f156–170), atap dan bendera di "bisnis" (f167), lampu jendela menyala di "kalian" (f176) | Pull-back 1.22 untuk memberi ruang gedung, **punch-in** di "BISNIS" (1.27→1.34) |
+| f199–221 | "Kabar baiknya," | **Kabar baiknya,** f199 | **Kilau emas** (burst + bintang) di sekitar headline | **Punch-in 1.25→1.35** f200–205 |
+| f220–270 | "kalian bisa mendapatkan ilmu" | per kata f220/229/238, **ILMU** f256 | **Buku** naik dari bawah (f220–232), **terbuka** di "mendapatkan" (f238–247), **ide (lampu)** keluar dari halaman, ikon ilmu (buku, kursor, lampu, wireframe) mengalir keluar (f246–268) | Drift 1.22→1.29, **punch-in 1.30→1.40** pada "ILMU" |
+| f271–299 | [VO di-mute: "personal branding" → `VO_REPLACEMENT_PENDING` "UI/UX workshop"] | **UI/UX WORKSHOP** f271 | **Kartu workshop** (polished) naik, CTA menyala, kursor klik f283 + ripple | Pull-back 1.37→1.24 untuk kartu, lalu push 1.34 ke exit |
+| f286–299 | — | mengerucut | Semua menyusut ke titik emas, panel teal/emas menyapu dari kiri dan masih bergerak di f299 | — |
+
+**Kamera:** translasi menjaga pusat wajah (face track yang dihaluskan) di titik target. Bingkai selalu tertutup (clamp). Zoom berupa track mono-cubic dengan punch 5 f di setiap kata kunci (`ZOOM` di `SB02.tsx`).
+
+
 
 ## Kontinuitas
 - **SB01 f299 → SB02 f0:** layer yang sama dirender di global frame 300 (pita teal/biru diagonal dan sapuan emas). Selisih frame di batas 5.0, median seluruh video 3.8; tanpa frame beku.
